@@ -21,5 +21,6 @@ export default () => (
         <Tab.Screen name="Find" component={Find} />
         <Tab.Screen name="Wallet" component={Wallet} />
         <Tab.Screen name="Profile" component={Profile} />
+        
     </Tab.Navigator>
 );
