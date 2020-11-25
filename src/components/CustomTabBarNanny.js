@@ -48,24 +48,24 @@ export default ({ state, navigation }) => {
     return (
         <TabArea>
             <TabItem onPress={()=>goTo('Home')}>
-                <HomeIcon style={{opacity: state.index===0? 1 : 0.8}} width="36" height="36" fill="#FFFFFF" stroke="#000000"/>
-                <Text>Home</Text> 
+                <HomeIcon style={{opacity: state.index===0? 1 : 0.8}} width="32" height="32" fill="#FFFFFF" stroke="#000000"/>
+                <Text style={{fontSize:12}}>Home</Text> 
             </TabItem>
             <TabItem onPress={()=>goTo('Shedule')}>
-                <SheduleIcon style={{opacity: state.index===1? 1 : 0.8}} width="36" height="36" fill="#FFFFFF" />
-                <Text>Shedule</Text> 
+                <SheduleIcon style={{opacity: state.index===1? 1 : 0.8}} width="32" height="32" fill="#FFFFFF" />
+                <Text style={{fontSize:12}}>Shedule</Text> 
             </TabItem>
             <TabItemCenter onPress={()=>goTo('Find')}>
                 <FindIcon width="30" height="30"/>
                 <Text style={{color:"#ffffff"}}>Find</Text> 
             </TabItemCenter>
             <TabItem onPress={()=>goTo('Wallet')}>
-                <WalletIcon style={{opacity: state.index===3? 1 : 0.8}} width="36" height="36" />
-                <Text>Wallet</Text> 
+                <WalletIcon style={{opacity: state.index===3? 1 : 0.8}} width="32" height="32" />
+                <Text style={{fontSize:12}}>Wallet</Text> 
             </TabItem>            
             <TabItem onPress={()=>goTo('Profile')}>
-                <ProfileIcon style={{opacity: state.index===4? 1 : 0.8}} width="48" height="48" fill="#FFFFFF" />   
-                <Text>Profile</Text> 
+                <ProfileIcon style={{opacity: state.index===4? 1 : 0.8}} width="32" height="32" fill="#FFFFFF" />   
+                <Text style={{fontSize:12}}>Profile</Text> 
             </TabItem>
         </TabArea>
     );

@@ -30,24 +30,24 @@ export default () => {
 
                 <HeadArea>
 
-                    <Text>Welcome, </Text>
-                    <Text>Mary</Text>
+                    <Text style={{fontSize:32}}>Welcome, </Text>
+                    <Text style={{fontSize:32, fontWeight:'bold'}}>Mary</Text>
 
                     <NotificationIconArea>
-                        <NotificationIcon/>
+                        <NotificationIcon width="36" height="36"/>
                     </NotificationIconArea>
                     
                 </HeadArea>   
 
                 <NotificationsArea>
 
-                    <Text>Get Started</Text>
+                    <Text style={{fontSize:20 ,color:'#6F7173'}}>Get Started</Text>
 
                     <NotificationBox>
 
                         <NotificationBoxMessage>
-                            <Text>Finalize your registration</Text>
-                            <Text>And advertise your profile right now</Text>
+                            <Text style={{fontSize:20 ,color:'#ffffff'}} >Finalize your registration</Text>
+                            <Text style={{fontSize:14 ,color:'#ffffff'}}>And advertise your profile right now</Text>
                         </NotificationBoxMessage>
 
                         <AlertIcon/>
@@ -57,6 +57,8 @@ export default () => {
                 </NotificationsArea>     
 
                 <NearToArea>
+
+                    <Text style={{fontSize:20 ,color:'#5F9CAF'}}>Near to you</Text>
 
                     <Swiper
                             style={{height: 110}}
