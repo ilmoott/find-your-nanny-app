@@ -35,7 +35,9 @@ export default () => {
     }
 
     const handleClickAcceptTerms =  () => {        
-        // navigation.navigate('ChooseProfile');
+        navigation.reset({
+            routes:[{name:'MainTabNanny'}] 
+        })
         
     }
 

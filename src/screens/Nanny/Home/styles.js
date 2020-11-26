@@ -18,7 +18,7 @@ export const HeadArea = styled.View`
     padding-top: 25px; 
 `;
 
-export const NotificationIconArea = styled.View`
+export const NotificationIconArea = styled.TouchableOpacity`
     justify-content: flex-end;
     align-items: flex-end;
     margin-right: 20px; 
@@ -47,21 +47,81 @@ export const NotificationBoxMessage = styled.View`
 `;
 export const NearToArea = styled.View`
     padding-top: 10px;
+    height: 200px;
     
 `;
-export const NearToItem = styled.View`
+export const NearToItem = styled.TouchableOpacity`
     padding: 10px;
     border: 2px solid;
     border-color: #3EC5F0;
     border-radius: 15px;
-    height: 100px;
+    height: 130px;
+    width: 290px;
 `;
 export const NearToInfo = styled.View``;
 
-export const NearToName = styled.Text``;
+export const NearToName = styled.Text`
+    color: #66DAA9;
+    font-size: 18px;
+    font-weight:bold;
+    padding-bottom: 10px;
+`;
+
+
 export const NearToBody = styled.Text``;
 
-export const YourActivityItem = styled.View``;
-export const YourActivityArea = styled.View``;
+export const FooterArea = styled.View`
+    
+    flex-direction:row;
+
+`;
+
+export const RectOne = styled.View`
+
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 10px; 
+    background-color: #66DAA9;
+    border-radius: 8px;
+    height: 30px;
+    width: 80px;
+`;
+
+export const RectTwo = styled.View`    
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 10px; 
+    background-color: #5F9CAF;
+    border-radius: 8px;
+    height: 30px; 
+    width: 80px;
+`;
+
+export const PriceArea = styled.View`
+    justify-content: center;
+    align-items: center;  
+    flex: 1;
+
+`;
+ 
+
+export const YourActivityArea = styled.ScrollView`
+    
+
+`;
   
+export const YourActivityItem = styled.View`
+    flex-direction: row;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 2px solid;
+    justify-content: center;
+    align-items: center;
+    border-color: #3EC5F0;
+    border-radius: 15px;
+    height: 40px;
+    width: 290px;
+`;
  
