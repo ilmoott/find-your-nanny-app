@@ -40,9 +40,11 @@ export default () => {
 
     const handleSignClick = async () => {
 
-        navigation.reset({
-            routes:[{name:'MainTabNanny'}] 
-        })
+        navigation.navigate('Checklist');
+
+        // navigation.reset({
+        //     routes:[{name:'MainTabNanny'}] 
+        // })
 
         // if(emailField != ''  && passwordField != ''){
         //     let json = await Api.signIn(emailField, passwordField);
