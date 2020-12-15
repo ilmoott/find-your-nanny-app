@@ -6,7 +6,10 @@ import SignUp from '../screens/SignUp'
 import ChooseProfile from '../screens/ChooseProfile' 
 import TermsUse from '../screens/TermsUse' 
 import MainTabNanny from '../stacks/MainTabNanny' 
-import Checklist from '../screens/Nanny/Checklist' 
+import Documentation from '../screens/Nanny/Checklist/Documentation' 
+import Profile1 from '../screens/Nanny/Checklist/Profile1' 
+// import Profile2 from '../screens/Nanny/Checklist/Profile2' 
+// import Finish from '../screens/Nanny/Checklist/Finish' 
 
 const Stack = createStackNavigator();
 
@@ -22,6 +25,9 @@ export default () => (
         <Stack.Screen name="ChooseProfile" component={ChooseProfile} /> 
         <Stack.Screen name="TermsUse" component={TermsUse} /> 
         <Stack.Screen name="MainTabNanny" component={MainTabNanny} />
-        <Stack.Screen name="Checklist" component={Checklist} />
+        <Stack.Screen name="Documentation" component={Documentation} />
+        <Stack.Screen name="Profile1" component={Profile1} />
+        {/* <Stack.Screen name="Profile2" component={Profile2} />
+        <Stack.Screen name="Finish" component={Finish} /> */}
     </Stack.Navigator>
 );

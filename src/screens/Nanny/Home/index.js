@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native'
 import { Text } from 'react-native';
 import { ScrollArea, 
          Container,
@@ -22,11 +23,19 @@ import { ScrollArea,
 import NavPrevIcon from '../../../assets/nav_prev.svg'
 import NavNextIcon from '../../../assets/nav_next.svg'
 import NotificationIcon from '../../../assets/bell.svg'
-import AlertIcon from '../../../assets/alert_circle.svg'
-import PhoneIcon from '../../../assets/megaphone.svg'
+import AlertIcon from '../../../assets/alert_circle.svg' 
 import Swiper from 'react-native-swiper'
 
 export default () => {
+
+    const navigation = useNavigation();
+
+    const handleClickFinishRegistration = () => {
+
+        navigation.navigate('Documentation');
+
+    }
+
     return (
         <ScrollArea>
 
@@ -47,7 +56,7 @@ export default () => {
 
                     <Text style={{fontSize:18 ,color:'#6F7173'}}>Get Started</Text>
 
-                    <NotificationBox>
+                    <NotificationBox onPress={handleClickFinishRegistration}>
 
                         <NotificationBoxMessage>
                             <Text style={{fontSize:20 ,color:'#ffffff'}} >Finalize your registration</Text>

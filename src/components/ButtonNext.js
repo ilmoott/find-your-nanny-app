@@ -19,9 +19,9 @@ const ButtonSignOut = styled.View`
 
 `;
 
-export default () => {
+export default (props) => {
     return (
-        <AreaSignOut>
+        <AreaSignOut onPress={props.onPress}>
             <ButtonSignOut>
                 <Text style={{color:"#ffffff", fontWeight:'bold', fontSize:20}}>Next</Text>
             </ButtonSignOut>

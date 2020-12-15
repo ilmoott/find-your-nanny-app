@@ -44,36 +44,11 @@ export const TextTitle = styled.Text`
 `
  
 export const TitleBodyArea = styled.View`
+    flex-direction: row;
     margin-left: 30px;
+    margin-bottom: 20px;
 `
  
-export const ListCertificationsArea = styled.ScrollView`
-
-
-`
-
-export const CertificationButton = styled.TouchableOpacity`
-    background-color: #FFFFFF;
-    height: 60px;
-    width: 340px;
-    align-items: center;
-    border-radius: 10px;
-    border: 1px solid;
-    border-color: #3EC5F0; 
-    flex-direction: row;
-    margin-top: 20px;
-    padding: 15px;
-    padding-bottom: 15px;
-`;
-
-export const CertificationText = styled.View`
-
-`
-
-export const CertificationIcon = styled.View`
-
-`
-
 
 export const FooterArea = styled.View` 
     background-color: #ffffff
