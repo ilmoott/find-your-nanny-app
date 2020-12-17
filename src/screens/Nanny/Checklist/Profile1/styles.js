@@ -48,6 +48,19 @@ export const TitleBodyArea = styled.View`
     margin-left: 30px;
     margin-bottom: 20px;
 `
+
+export const ListPersonalData = styled.ScrollView`
+`
+
+export const PersonalArea = styled.View`     
+    align-items: center; 
+    justify-content: center;
+`
+export const CityArea = styled.View`     
+    align-items: center; 
+    justify-content: center;
+    flex-direction: row; 
+`
  
 
 export const FooterArea = styled.View` 
