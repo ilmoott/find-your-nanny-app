@@ -8,7 +8,8 @@ import TermsUse from '../screens/TermsUse'
 import MainTabNanny from '../stacks/MainTabNanny' 
 import Documentation from '../screens/Nanny/Checklist/Documentation' 
 import Profile1 from '../screens/Nanny/Checklist/Profile1' 
-// import Profile2 from '../screens/Nanny/Checklist/Profile2' 
+import Profile2 from '../screens/Nanny/Checklist/Profile2' 
+import CameraScreen from '../screens/CameraScreen' 
 // import Finish from '../screens/Nanny/Checklist/Finish' 
 
 const Stack = createStackNavigator();
@@ -27,7 +28,8 @@ export default () => (
         <Stack.Screen name="MainTabNanny" component={MainTabNanny} />
         <Stack.Screen name="Documentation" component={Documentation} />
         <Stack.Screen name="Profile1" component={Profile1} />
-        {/* <Stack.Screen name="Profile2" component={Profile2} />
-        <Stack.Screen name="Finish" component={Finish} /> */}
+        <Stack.Screen name="Profile2" component={Profile2} />
+        <Stack.Screen name="CameraScreen" component={CameraScreen} />
+        {/* <Stack.Screen name="Finish" component={Finish} /> */}
     </Stack.Navigator>
 );

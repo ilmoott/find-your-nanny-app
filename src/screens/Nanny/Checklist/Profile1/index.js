@@ -37,10 +37,13 @@ export default () => {
         navigation.navigate('Documentation');
         
     } 
-    
-    this.state = {
-        country: 'uk'
-    }
+
+    const handleClickNext = () => {
+         
+        navigation.navigate('Profile2');
+        
+    }     
+     
  
     return (
         <Container>
@@ -71,7 +74,7 @@ export default () => {
                     <PersonalArea>
 
                         <TextBox    
-                            large='90%'
+                            large='90%'  
                             placeholder="Age"
                             value={age}
                             onChangeText={t=>setAgeField(t)} // isso permite alterar o texto no text
@@ -84,14 +87,15 @@ export default () => {
                                 {label: 'Male', value: 'male'},
                                 {label: 'Other', value: 'other'},
                             ]}
-                            containerStyle={{height: 70, width: '90%', marginRight: 10, paddingBottom: 10}}
+                            containerStyle={{height: 70, width: '90%', marginRight: 10, paddingBottom: 10, marginTop:10}}
                             itemStyle={{
-                                justifyContent: 'center'
+                                justifyContent: 'flex-start',
+                                fontSize:12
                             }}
                         />
 
                         <TextBox    
-                            large='90%'
+                            large='90%' 
                             placeholder="Adress"
                             value={adress}
                             onChangeText={t=>setAdressField(t)} // isso permite alterar o texto no text
@@ -104,7 +108,7 @@ export default () => {
                     <CityArea>
 
                         <TextBox    
-                            large='44%'
+                            large='44%' 
                             placeholder="City"
                             value={city}
                             onChangeText={t=>setCityField(t)} // isso permite alterar o texto no text
@@ -112,7 +116,7 @@ export default () => {
                         />   
 
                         <TextBox    
-                            large='44%'
+                            large='44%' 
                             placeholder="State"
                             value={state}
                             onChangeText={t=>setStateField(t)} // isso permite alterar o texto no text
@@ -128,7 +132,7 @@ export default () => {
             </BodyArea>
 
             <FooterArea>
-                <ButtonNext/>
+                <ButtonNext onPress={handleClickNext}/>
             </FooterArea>
 
 
