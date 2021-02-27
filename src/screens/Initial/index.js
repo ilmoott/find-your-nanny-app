@@ -1,7 +1,8 @@
 import React, { useEffect, useContext } from 'react' 
-import { Container, LoadingIcon } from './styles.js'
+import { Container, LoadingIcon, CustomButton, CustomButtonText } from './styles.js'
 import AsyncStorage from '@react-native-community/async-storage'
 import{ useNavigation } from '@react-navigation/native'
+import GenericButton from '../../components/GenericButton' 
 import Logo from '../../assets/Logobranca.svg'
  
 import { UserContext } from '../../contexts/UserContext'     
@@ -37,25 +38,47 @@ export default () => {
     
                 // } else{
                 //     navigation.navigate('SignIn');
-                // }           
+                // }            
 
-                navigation.navigate('Initial');
-
-            }else{
-                // mando pra login
-
-                navigation.navigate('Initial') //minha tela de login
-
-            }
+            } 
         }
         checkToken();
     }, []);
+
+    const handleSignInClick = () => {
+
+        navigation.reset({
+            routes: [{name: 'SignIn'}] // Como eu sei que isso é uma rota??
+        });
+
+    }
+
+    const handleSignUpClick = () => {
+
+        navigation.reset({
+            routes: [{name: 'SignUp'}] // Como eu sei que isso é uma rota??
+        });
+
+    }    
  
 
     return(
         <Container>
-            <Logo width="60%"/>
-            <LoadingIcon size="large" color="#FFFFFF"/>
+            <Logo width="50%" style={{marginBottom:30}}/> 
+
+            <GenericButton onPress={handleSignInClick} 
+                           text="Sign in"  
+                           color='#3EC5F0'
+                           backgroundColor='#FFFFFF'
+                           borderColor='#3EC5F0'/>
+
+            <GenericButton onPress={handleSignUpClick} 
+                                    text="Register Now" 
+                                    color='#FFFFFF'
+                                    backgroundColor='#3EC5F0'
+                                    borderColor='#FFFFFF'/>                           
+ 
+
         </Container>
     );
 }

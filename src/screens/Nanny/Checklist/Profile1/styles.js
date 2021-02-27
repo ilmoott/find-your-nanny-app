@@ -68,5 +68,6 @@ export const CityArea = styled.View`
 
 export const FooterArea = styled.View`  
 
-    background-color: #ffffff
+    background-color: #ffffff;
+    align-items: center; 
 `
