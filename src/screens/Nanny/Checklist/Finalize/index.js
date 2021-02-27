@@ -9,9 +9,9 @@ import { Container,
          } from './styles';
 
 
-import Avatar from '../../../../assets/finalize_avatar.svg';
+import Avatar from '../../../../assets/finalize_avatar_2.svg';
  
-import ButtonNext from '../../../../components/ButtonNext' 
+import GenericButton from '../../../../components/GenericButton' 
 export default () => {
  
     
@@ -32,7 +32,7 @@ export default () => {
 
             <HeaderArea>
                
-                <Text style={{color:'#5F9CAF', fontSize:34, textAlign: 'center'}}>We will analyze your profile </Text> 
+                <Text style={{color:'#FFFFFF', fontSize:34, textAlign: 'center'}}>We will analyze your profile </Text> 
 
             </HeaderArea>
 
@@ -42,14 +42,18 @@ export default () => {
 
             <TextArea>
 
-                <Text style={{color:'#5F9CAF', fontSize:16, textAlign: 'center'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                <Text style={{color:'#FFFFFF', fontSize:16, textAlign: 'center'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                                                                                   sed do eiusmod tempor incididunt ut labore 
                                                                                   et dolore magna aliqua. </Text> 
             </TextArea>
  
 
             <FooterArea>
-                <ButtonNext onPress={handleClickBack} text="Back to init"/>
+                <GenericButton onPress={handleClickBack} 
+                                        text="Back to init" 
+                                        color='#40CE81'
+                                        backgroundColor='#FFFFFF'
+                                        borderColor='#40CE81'/>  
             </FooterArea>
 
 

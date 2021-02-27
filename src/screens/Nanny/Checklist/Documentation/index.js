@@ -17,7 +17,7 @@ import NavPrevIcon from '../../../../assets/nav_prev.svg';
 import ItemChecked from '../../../../components/ItemChecked.js';
 
 
-import ButtonNext from '../../../../components/ButtonNext'
+import GenericButton from '../../../../components/GenericButton'
 
 export default () => {
 
@@ -81,7 +81,12 @@ export default () => {
             </BodyArea>
 
             <FooterArea>
-                <ButtonNext onPress={handleClickNext} text="Next"/>
+
+                <GenericButton onPress={handleClickNext} 
+                                        text="Next" 
+                                        color='#FFFFFF'
+                                        backgroundColor='#3EC5F0'
+                                        borderColor='#FFFFFF'/>  
             </FooterArea>
 
 

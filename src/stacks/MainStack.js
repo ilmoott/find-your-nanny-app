@@ -1,6 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import Preload from '../screens/Preload'
+import Initial from '../screens/Initial'
 import SignIn from '../screens/SignIn'
 import SignUp from '../screens/SignUp' 
 import ChooseProfile from '../screens/ChooseProfile' 
@@ -22,6 +23,7 @@ export default () => (
             headerShown: false // isso faz que com o cabeçalho das telas não apareçam
         }}>
         <Stack.Screen name="Preload" component={Preload} />
+        <Stack.Screen name="Initial" component={Initial} />
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} /> 
         <Stack.Screen name="ChooseProfile" component={ChooseProfile} /> 

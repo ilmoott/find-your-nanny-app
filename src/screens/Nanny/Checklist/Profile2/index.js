@@ -19,7 +19,7 @@ import { Container,
 import NavPrevIcon from '../../../../assets/nav_prev.svg';
 import PhotoIcon from '../../../../assets/PhotoArea.svg';
  
-import ButtonNext from '../../../../components/ButtonNext' 
+import GenericButton from '../../../../components/GenericButton' 
 
 import MemoBox   from '../../../../components/MemoBox' 
 import TextBox   from '../../../../components/TextBox' 
@@ -180,8 +180,13 @@ export default () =>  {
                 
             </BodyArea>
 
-            <FooterArea>
-                <ButtonNext onPress={handleClickNext} text="Next"/>
+            <FooterArea> 
+
+                <GenericButton onPress={handleClickNext} 
+                                        text="Next" 
+                                        color='#FFFFFF'
+                                        backgroundColor='#3EC5F0'
+                                        borderColor='#FFFFFF'/>  
             </FooterArea>
 
 

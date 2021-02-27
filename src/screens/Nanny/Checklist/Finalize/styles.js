@@ -2,19 +2,21 @@ import React from 'react'
 import styled from 'styled-components/native'
 
 export const Container = styled.SafeAreaView`
-    background-color: #ffffff; 
+    background-color: #40CE81;  
     flex: 1; 
 `;
 
 export const AvatarArea = styled.View`
-    background-color: #ffffff;
-    align-items: center;
-    flex: 1; 
+    background-color: #40CE81;
+    align-items: center; 
+    margin-bottom: 50px;
 `;
 
 export const TextArea = styled.View`
-    background-color: #ffffff;
+    background-color: #40CE81;
     align-items: center; 
+    margin-top: 30px; 
+    margin-bottom: 50px;
     margin-left: 10px;
     margin-right: 10px;
 `;
@@ -24,7 +26,7 @@ export const LoadingIcon = styled.ActivityIndicator`
 `
 
 export const HeaderArea = styled.View` 
-
+ 
     margin-top: 70px;
     margin-bottom: 25px;
     align-items: center; 
@@ -36,8 +38,7 @@ export const BodyArea = styled.View`
     background-color: #ffffff;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;  
-    padding-top: 20px; 
-    flex:1;
+    padding-top: 20px;  
 `
 
 export const ButtonBackArea = styled.TouchableOpacity`
@@ -80,6 +81,6 @@ export const CityArea = styled.View`
  
 
 export const FooterArea = styled.View`  
-
-    background-color: #ffffff
+ 
+    align-items: center; 
 `
