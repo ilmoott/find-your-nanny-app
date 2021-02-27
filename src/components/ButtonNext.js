@@ -23,7 +23,7 @@ export default (props) => {
     return (
         <AreaSignOut onPress={props.onPress}>
             <ButtonSignOut>
-                <Text style={{color:"#ffffff", fontWeight:'bold', fontSize:20}}>Next</Text>
+                <Text style={{color:"#ffffff", fontWeight:'bold', fontSize:20}}>{props.text}</Text>
             </ButtonSignOut>
         </AreaSignOut>
     )

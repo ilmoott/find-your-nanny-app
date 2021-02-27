@@ -1,6 +1,9 @@
-import  React, {useState, Text, useContext } from 'react' 
+import  React, {useState, useContext } from 'react' 
+import  {Text} from 'react-native' 
 import {useNavigation} from '@react-navigation/native'
-import { Container,
+import { 
+         LogoArea,
+         Container,
          ScrollArea,
          InputArea,
          CustomButton,
@@ -13,7 +16,7 @@ import { Container,
 
 import SignInput from '../../components/SignInput'
 
-import NannyLogo from '../../assets/LogoAzul.svg'
+import NannyLogo from '../../assets/Logobranca.svg'
 import EmailIcon from '../../assets/email.svg'
 import LockIcon from '../../assets/lock.svg'
  
@@ -78,11 +81,18 @@ export default () => {
     return(
         <ScrollArea>
 
+
             <Container>
 
-                <NannyLogo width="70%" height="110" />
+                <LogoArea>
+
+                    <NannyLogo width="30%"/>
+
+                </LogoArea>
 
                 <InputArea>
+
+                    <Text style={{fontSize:28, paddingBottom:25}}>Welcome!</Text>
 
                     <SignInput 
                         IconSvg={EmailIcon}
@@ -102,7 +112,7 @@ export default () => {
     
                     <CustomButton onPress={handleSignClick}>
                         
-                        <CustomButtonText>LOGIN</CustomButtonText>
+                        <CustomButtonText>Login</CustomButtonText>
 
                     </CustomButton>
 

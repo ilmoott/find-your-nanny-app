@@ -9,6 +9,7 @@ import MainTabNanny from '../stacks/MainTabNanny'
 import Documentation from '../screens/Nanny/Checklist/Documentation' 
 import Profile1 from '../screens/Nanny/Checklist/Profile1' 
 import Profile2 from '../screens/Nanny/Checklist/Profile2' 
+import Finalize from '../screens/Nanny/Checklist/Finalize' 
 import CameraScreen from '../screens/CameraScreen' 
 // import Finish from '../screens/Nanny/Checklist/Finish' 
 
@@ -29,6 +30,7 @@ export default () => (
         <Stack.Screen name="Documentation" component={Documentation} />
         <Stack.Screen name="Profile1" component={Profile1} />
         <Stack.Screen name="Profile2" component={Profile2} />
+        <Stack.Screen name="Finalize" component={Finalize} />
         <Stack.Screen name="CameraScreen" component={CameraScreen} />
         {/* <Stack.Screen name="Finish" component={Finish} /> */}
     </Stack.Navigator>

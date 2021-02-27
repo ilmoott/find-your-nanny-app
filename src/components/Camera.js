@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { StyleSheet, TouchableOpacity, Text, ImageBackground, ScrollView, View, CameraRoll, PermissionsAndroid } from "react-native";
+import { StyleSheet, TouchableOpacity, Text, ImageBackground, ScrollView, View,  PermissionsAndroid } from "react-native";
 import { RNCamera } from "react-native-camera";
 import Icon from "react-native-vector-icons/FontAwesome";
 import styled from 'styled-components/native';
 import ButtonTakePic from '../assets/ButtonTakePic.svg'
+import CameraRoll from '@react-native-community/cameraroll'
 
 const Container = styled.SafeAreaView` 
     flex: 1; 
@@ -36,7 +37,7 @@ export default Camera = () => {
     try {
       if (this.camera) {
         const options = {
-          quality: 0.5,
+          quality: 1,
           base64: true,
           forceUpOrientation: true,
           fixOrientation: true
@@ -51,6 +52,26 @@ export default Camera = () => {
 
   submitPicture = async () => {
     try {
+
+        const checkAndroidPermission = async () => {
+          try {
+            const permission = PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE;
+            await PermissionsAndroid.request(permission);
+            Promise.resolve();
+          } catch (error) {
+            Promise.reject(error);
+          }
+      };
+      
+      const savePicture = async () => {
+          if (Platform.OS === 'android'){
+            await checkAndroidPermission();
+          }
+        alert(imageUri)
+        CameraRoll.save(imageUri);
+      };
+
+
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
         {
@@ -58,8 +79,9 @@ export default Camera = () => {
           "message": "Access Storage for the pictures"
         }
       )
-      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-        await CameraRoll.saveToCameraRoll(imageUri);
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) { 
+        console.log("Entrando na Camera.");
+        await savePicture()
       } else {
         console.log("Permissao de camera negada.");
       }
@@ -87,7 +109,7 @@ export default Camera = () => {
             ref={camera => { this.camera = camera; }}
             style={styles.camera}
             type={RNCamera.Constants.Type.front}
-            autoFocus={RNCamera.Constants.AutoFocus.on}
+            // autoFocus={RNCamera.Constants.AutoFocus.on}
             flashMode={RNCamera.Constants.FlashMode.off}
             // permissionDialogTitle={"Permission to use camera"}
             // permissionDialogMessage={"We need your permission to use your camera phone"}

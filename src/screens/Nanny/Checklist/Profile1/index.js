@@ -132,7 +132,7 @@ export default () => {
             </BodyArea>
 
             <FooterArea>
-                <ButtonNext onPress={handleClickNext}/>
+                <ButtonNext onPress={handleClickNext} text="Next"/>
             </FooterArea>
 
 

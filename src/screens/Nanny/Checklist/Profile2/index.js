@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
-import {TabRouter, useNavigation} from '@react-navigation/native' 
-import { Text } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { useNavigation} from '@react-navigation/native' 
+import { Text, Platform, Image, PermissionsAndroid, View, Button } from 'react-native'; 
 import { Container,
          HeaderArea,
          ButtonBackArea,
@@ -9,6 +9,7 @@ import { Container,
          BodyArea,
          TitleBodyArea, 
          ListPersonalData,
+         IconArea,
          PhotoArea,
          DataArea,
          ButtonPhoto,
@@ -18,17 +19,20 @@ import { Container,
 import NavPrevIcon from '../../../../assets/nav_prev.svg';
 import PhotoIcon from '../../../../assets/PhotoArea.svg';
  
-import ButtonNext from '../../../../components/ButtonNext'
-import Camera from '../../../../components/Camera'
+import ButtonNext from '../../../../components/ButtonNext' 
 
 import MemoBox   from '../../../../components/MemoBox' 
 import TextBox   from '../../../../components/TextBox' 
 
-export default () => {
+// import ImagePicker from 'react-native-image-picker'; 
+import * as ImagePicker from 'expo-image-picker'; 
+  
+
+export default () =>  { 
 
     const [biography, setBiography] = useState(''); 
-    const [interested, setInterested] = useState(''); 
-    const [openCamera, setOpenCamera] = useState(false); 
+    const [interested, setInterested] = useState('');  
+    const [avatar, setAvatar] = useState();
     
     const navigation = useNavigation();
 
@@ -38,12 +42,55 @@ export default () => {
         
     }  
 
-    const setPhoto = () => {
-         
-        navigation.navigate('CameraScreen'); 
+    const handleClickNext = () => {
+          
+        navigation.navigate('Finalize');
         
-    }  
+    }        
+
+    useEffect(() => {
+        (async () => {
+          if (Platform.OS !== 'web') {
+            const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+            if (status !== 'granted') {
+              alert('Sorry, we need camera roll permissions to make this work!');
+            }
+          }
+        })();
+      }, []);
+    
+    
+    const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: false,
+        aspect: [4, 3],
+        quality: 1,
+    }) 
+
+    if (!result.cancelled) {
+        setAvatar(result.uri);
+    }
+
+    };
+
+    
+    const pickCamera = async () => {
  
+        let result = await ImagePicker.launchCameraAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            base64: true,
+            allowsEditing: false, 
+            quality: 1 
+        })
+
+         
+        if (!result.cancelled) {
+            setAvatar(result.uri);
+        }
+    
+        };
+    
     return (
         <Container>
 
@@ -70,9 +117,22 @@ export default () => {
 
                 <ListPersonalData>
 
-                    <PhotoArea>                                      
-                        <PhotoIcon/>
-                        <ButtonPhoto onPress={setPhoto}>
+                    <PhotoArea>  
+                        <IconArea onPress={pickImage}>  
+                            {avatar && 
+                            
+                            <Image source={{ uri: avatar }} style={{ width: 120, height: 120, borderRadius: 100 }} />
+                                                        
+                            }
+
+                            {!avatar &&
+
+                            <PhotoIcon/>
+                            
+                            } 
+                            
+                        </IconArea>   
+                        <ButtonPhoto onPress={pickCamera}>
                             <Text
                                 style={{ 
                                     fontWeight:'bold',
@@ -82,6 +142,7 @@ export default () => {
                                 Set Photo</Text>
 
                         </ButtonPhoto>
+                        
 
                     </PhotoArea>
 
@@ -120,7 +181,7 @@ export default () => {
             </BodyArea>
 
             <FooterArea>
-                <ButtonNext/>
+                <ButtonNext onPress={handleClickNext} text="Next"/>
             </FooterArea>
 
 
