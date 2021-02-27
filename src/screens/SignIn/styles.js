@@ -3,8 +3,8 @@ import styled from 'styled-components/native';
 
 
 export const ScrollArea = styled.ScrollView` 
-    flex: 1;
     background-color: #FFFFFF;
+    flex: 1;
 `;
 
 export const Container = styled.SafeAreaView`
