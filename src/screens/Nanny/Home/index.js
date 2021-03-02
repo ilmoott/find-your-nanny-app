@@ -1,26 +1,21 @@
 import React from 'react';
 import {useNavigation} from '@react-navigation/native'
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { ScrollArea, 
          Container,
          HeadArea,
          NotificationIconArea,
-         NearToArea,
-         NearToItem,
-         NearToInfo,
-         NearToName, 
-         NearToBody,
-         FooterArea,
-         RectOne,
-         RectTwo,
-         PriceArea
+         SwapperArea 
      } from './styles.js' 
 import NavPrevIcon from '../../../assets/nav_prev.svg'
 import NavNextIcon from '../../../assets/nav_next.svg'
-import NotificationIcon from '../../../assets/bell.svg' 
+import NotificationIcon from '../../../assets/bell.svg'
 import Swiper from 'react-native-swiper'
 
 import NotificationBox from '../../../components/NotificationBox.js'
+import NotificationItem from '../../../components/NotificationItem.js'
+import BoxNearItem from '../../../components/BoxAddItem.js'
+import SheduleItem from '../../../components/SheduleItem.js'
 
 export default () => {
 
@@ -47,17 +42,28 @@ export default () => {
                     </NotificationIconArea>
                     
                 </HeadArea>   
-                 
+
+
                  <NotificationBox onPress={handleClickFinishRegistration} 
                                          title="Get Started"  
                                          text1="Finalize your registration"  
                                          text2="And advertise your profile right now"  
                                          color='#6F7173'
                                          backgroundColor='#FFBE71'/>  
+                 
+                 <NotificationItem title="You received an invitation!"  
+                                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"    
+                                        number='1'
+                                        color='#3EC5F0'/>  
 
-                 <NearToArea>
+                <NotificationItem title="You have a new job!"  
+                                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"    
+                                        number='5'
+                                        color='#40CE81'/>                                          
 
-                    <Text style={{fontSize:18 ,color:'#5F9CAF', paddingBottom:15}}>Near to you</Text>
+                 <SwapperArea>
+
+                    <Text style={{fontSize:18 ,color:'#5F9CAF', paddingBottom:15}}>Your Shedule</Text>
 
                     <Swiper
                             style={{height: 130}}
@@ -65,88 +71,97 @@ export default () => {
                             showsButtons={false}
                             prevButton={<NavPrevIcon width="35" height="35" fill="#000000"/>}
                             nextButton={<NavNextIcon width="35" height="35" fill="#000000"/>}
-                        >                          
-                                <NearToItem>
-                                    <NearToInfo>
-                                        <NearToName>Two children for a weekend</NearToName> 
-                                    </NearToInfo>
-                                    <NearToBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit</NearToBody>
+                        >     
 
-                                    <FooterArea>
+                        <View onStartShouldSetResponder={() => true}>
 
-                                        <RectOne>
-                                            <Text style={{color:'#ffffff'}}>Baby sitter</Text>
-                                        </RectOne>
-
-                                        <RectTwo>
-                                            <Text style={{color:'#ffffff'}}>Preschool</Text>
-                                        </RectTwo>
-
-                                        <PriceArea>
-                                            <Text  style={{color:'#F1C38D',fontSize:18, fontWeight:'bold'}}>$ 25/h</Text>
-                                        </PriceArea>
-
-                                    </FooterArea>
-
-                                </NearToItem>
-
-
-
-                                <NearToItem>
-                                    <NearToInfo>
-                                        <NearToName>Five children for a Friday</NearToName> 
-                                    </NearToInfo>
-                                    <NearToBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit</NearToBody>
-
-                                    <FooterArea>
-
-                                        <RectOne>
-                                            <Text style={{color:'#ffffff'}}>Baby</Text>
-                                        </RectOne>
-
-                                        <RectTwo>
-                                            <Text style={{color:'#ffffff'}}>Preschool</Text>
-                                        </RectTwo>
-
-                                        <PriceArea>
-                                            <Text  style={{color:'#F1C38D',fontSize:18, fontWeight:'bold'}}>$ 39/h</Text>
-                                        </PriceArea>
-
-                                    </FooterArea>
-
-                                </NearToItem>
-
-
-
-                                <NearToItem>
-                                    <NearToInfo>
-                                        <NearToName>One children for six weekend</NearToName> 
-                                    </NearToInfo>
-                                    <NearToBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit</NearToBody>
-
-                                    <FooterArea>
-
-                                        <RectOne>
-                                            <Text style={{color:'#ffffff'}}>Jung</Text>
-                                        </RectOne>
-
-                                        <RectTwo>
-                                            <Text style={{color:'#ffffff'}}>Preschool</Text>
-                                        </RectTwo>
-
-                                        <PriceArea>
-                                            <Text style={{color:'#F1C38D',fontSize:18, fontWeight:'bold'}}>$ 10/h</Text>
-                                        </PriceArea>
-
-                                    </FooterArea>
-
-                                </NearToItem>
-
+                            <SheduleItem day="06"  
+                                        date="January, 2021"  
+                                        jobs="04 Jobs"/> 
                                  
-                         
-                        </Swiper> 
+
+                        </View>
+
+                        <View onStartShouldSetResponder={() => true}>
+
+                            <SheduleItem day="22"  
+                                        date="Feb, 2021"  
+                                        jobs="02 Jobs"/> 
+                                 
+                                 
+
+                        </View>
+
+                        <View onStartShouldSetResponder={() => true}>
+
+                             <SheduleItem day="08"  
+                                        date="March, 2021"  
+                                        jobs="12 Jobs"/> 
+                                      
+
+                        </View>  
+                    </Swiper> 
+ 
+                    </SwapperArea>
+
+                    <SwapperArea>   
+                        <Text style={{fontSize:18 ,color:'#5F9CAF', paddingBottom:15}}>Near to you</Text>
+
+                        <Swiper
+                            style={{height: 130}}
+                            showsPagination={false}
+                            showsButtons={false}
+                            prevButton={<NavPrevIcon width="35" height="35" fill="#000000"/>}
+                            nextButton={<NavNextIcon width="35" height="35" fill="#000000"/>}
+                        >     
+
+                        <View onStartShouldSetResponder={() => true}>
+
+                            <BoxNearItem title="Two children for a weekend"  
+                                        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  
+                                        taga="Babysitter"
+                                        tagb="Preschool"
+                                        price="$ 20/h"/> 
+                                 
+
+                        </View>
+
+                        <View onStartShouldSetResponder={() => true}>
+
+                             <BoxNearItem title="Five children for a Friday"  
+                                        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  
+                                        taga="Babysitter"
+                                        tagb="Preschool"
+                                        price="$ 20/h"/>  
+                                 
+
+                        </View>
+
+                        <View onStartShouldSetResponder={() => true}>
+
+                            <BoxNearItem title="Two children for a weekend"  
+                                            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  
+                                            taga="Baby"
+                                            tagb="Preschool"
+                                            price="$ 39/h"/>         
+                                 
+
+                        </View>
+
+                        <View onStartShouldSetResponder={() => true}>
+
+                            <BoxNearItem title="One children for six weekend"  
+                                            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  
+                                            taga="Jung"
+                                            tagb="Preschool"
+                                            price="$ 10/h"/>       
+                                 
+
+                        </View>                                   
+
+                        </Swiper>                         
                     
-                </NearToArea> 
+                </SwapperArea> 
 
             </Container>
  
