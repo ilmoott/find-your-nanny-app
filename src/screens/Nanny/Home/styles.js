@@ -1,6 +1,17 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
+
+export const SwapperArea = styled.View`
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 200px;
+    
+`;
+
+export const AreaTeste = styled.View` 
+    
+`;
 export const ScrollArea = styled.ScrollView`
     background-color: #ffffff;
 `;
@@ -45,66 +56,7 @@ export const NotificationBox = styled.TouchableOpacity`
 export const NotificationBoxMessage = styled.View`
     padding-right:20px;
 `;
-export const NearToArea = styled.View`
-    padding-top: 10px;
-    height: 200px;
-    
-`;
-export const NearToItem = styled.TouchableOpacity`
-    padding: 10px;
-    border: 2px solid;
-    border-color: #3EC5F0;
-    border-radius: 15px;
-    height: 130px;
-    width: 290px;
-`;
-export const NearToInfo = styled.View``;
 
-export const NearToName = styled.Text`
-    color: #66DAA9;
-    font-size: 18px;
-    font-weight:bold;
-    padding-bottom: 10px;
-`;
-
-
-export const NearToBody = styled.Text``;
-
-export const FooterArea = styled.View`
-    
-    flex-direction:row;
-
-`;
-
-export const RectOne = styled.View`
-
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-    margin-top: 10px; 
-    background-color: #66DAA9;
-    border-radius: 8px;
-    height: 30px;
-    width: 80px;
-`;
-
-export const RectTwo = styled.View`    
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-    margin-top: 10px; 
-    background-color: #5F9CAF;
-    border-radius: 8px;
-    height: 30px; 
-    width: 80px;
-`;
-
-export const PriceArea = styled.View`
-    justify-content: center;
-    align-items: center;  
-    flex: 1;
-
-`;
  
 
 export const YourActivityArea = styled.ScrollView`
