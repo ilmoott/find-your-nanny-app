@@ -3,12 +3,10 @@ import styled from 'styled-components/native';
 import { ShadowPropTypesIOS, Text } from 'react-native';
 
 const NearToItem = styled.TouchableOpacity`
-    padding: 10px;
+    padding: 10px; 
     background-color: #FFFFFF;
     border-radius: 15px;
-    border-radius: 15px;
-    height: 130px;
-    width: 290px;
+    height: 100px; 
 `;
 const NearToInfo = styled.View``;
 
@@ -51,13 +49,16 @@ export default (props) => {
     return ( 
 
     <NearToItem>
+
         <NearToInfo>
             <NearToName>{props.title}</NearToName> 
-        </NearToInfo>
-        
-        <NearToBody>{props.body}</NearToBody>
+        </NearToInfo> 
 
         <FooterArea>
+
+            <PriceArea>
+                <Text  style={{color:'#F1C38D',fontSize:18, fontWeight:'bold'}}>{props.price}</Text>
+            </PriceArea>
 
             <RectOne>
                 <Text style={{color:'#ffffff'}}>{props.taga}</Text>
@@ -66,10 +67,6 @@ export default (props) => {
             <RectOne>
                 <Text style={{color:'#ffffff'}}>{props.tagb}</Text>
             </RectOne> 
-
-            <PriceArea>
-                <Text  style={{color:'#F1C38D',fontSize:18, fontWeight:'bold'}}>{props.price}</Text>
-            </PriceArea>
 
         </FooterArea>
 
