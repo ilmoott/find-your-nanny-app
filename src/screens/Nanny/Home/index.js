@@ -9,13 +9,15 @@ import { ScrollArea,
      } from './styles.js' 
 import NavPrevIcon from '../../../assets/nav_prev.svg'
 import NavNextIcon from '../../../assets/nav_next.svg'
-import NotificationIcon from '../../../assets/bell.svg'
 import Swiper from 'react-native-swiper'
+import NotificationIcon from '../../../assets/bell.svg'
 
 import NotificationBox from '../../../components/NotificationBox.js'
 import NotificationItem from '../../../components/NotificationItem.js'
 import BoxNearItem from '../../../components/BoxAddItem.js'
 import SheduleItem from '../../../components/SheduleItem.js'
+
+import Carousel from 'react-native-snap-carousel';
 
 export default () => {
 
@@ -26,6 +28,51 @@ export default () => {
         navigation.navigate('Documentation');
 
     }
+
+    shedule = {
+        data: [
+        { id: "00", day: "06", date: "January, 2021", jobs: "04 Jobs" },
+        { id: "01", day: "09", date: "Feb, 2021", jobs: "02 Jobs" },
+        { id: "02", day: "11", date: "March, 2021", jobs: "12 Jobs" },
+        { id: "03", day: "13", date: "November, 2021", jobs: "06 Jobs" },
+        ]
+    }; 
+
+
+    opportunities = {
+        data: [
+        { id: "00", 
+          title: "Two children for a weekend", 
+          body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 
+          taga: "Babysitter", 
+          tagb: "Preschool", 
+          price: "$ 20/h" }, 
+
+        { id: "01", 
+          title: "Four children for a weekend", 
+          body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 
+          taga: "Baby", 
+          tagb: "Preschool", 
+          price: "$ 39/h" }, 
+
+        { id: "02", 
+          title: "One children for six weekend", 
+          body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 
+          taga: "Jung", 
+          tagb: "Preschool", 
+          price: "$ 10/h" }, 
+
+        { id: "03", 
+          title: "Four children for a weekend", 
+          body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit", 
+          taga: "Babysitter", 
+          tagb: "Preschool", 
+          price: "$ 50/h" }, 
+
+
+
+        ]
+    };      
 
     return (
         <ScrollArea>
@@ -61,106 +108,65 @@ export default () => {
                                         number='5'
                                         color='#40CE81'/>                                          
 
-                 <SwapperArea>
+                <SwapperArea>
 
                     <Text style={{fontSize:18 ,color:'#5F9CAF', paddingBottom:15}}>Your Shedule</Text>
 
-                    <Swiper
-                            style={{height: 130}}
-                            showsPagination={false}
-                            showsButtons={false}
-                            prevButton={<NavPrevIcon width="35" height="35" fill="#000000"/>}
-                            nextButton={<NavNextIcon width="35" height="35" fill="#000000"/>}
-                        >     
+                     
+                    <Carousel 
+                        sliderWidth={400}
+                        itemWidth={150}
+                        loop={false}
+                        enableSnap={false}
+                        inactiveSlideScale={0.8}
+                        inactiveSlideOpacity={0.3}
+                        activeSlideAlignment={'start'}
+                        contentContainerCustomStyle={{  alignItems: 'center' }}
+                        data={this.shedule.data} 
+                        // lockScrollWhileSnapping={true}
+                        // autoplay={true}
+                        // autoplayDelay={500}
+                        // autoplayInterval={3000}
+                        renderItem={({ item }) => {
+                            return (
+                            <SheduleItem day={item.day}  
+                                        date={item.date}
+                                        jobs={item.jobs}/>
+                             );
+                        }}
+                    />  
 
-                        <View onStartShouldSetResponder={() => true}>
-
-                            <SheduleItem day="06"  
-                                        date="January, 2021"  
-                                        jobs="04 Jobs"/> 
-                                 
-
-                        </View>
-
-                        <View onStartShouldSetResponder={() => true}>
-
-                            <SheduleItem day="22"  
-                                        date="Feb, 2021"  
-                                        jobs="02 Jobs"/> 
-                                 
-                                 
-
-                        </View>
-
-                        <View onStartShouldSetResponder={() => true}>
-
-                             <SheduleItem day="08"  
-                                        date="March, 2021"  
-                                        jobs="12 Jobs"/> 
-                                      
-
-                        </View>  
-                    </Swiper> 
- 
                     </SwapperArea>
 
                     <SwapperArea>   
                         <Text style={{fontSize:18 ,color:'#5F9CAF', paddingBottom:15}}>Near to you</Text>
 
-                        <Swiper
-                            style={{height: 130}}
-                            showsPagination={false}
-                            showsButtons={false}
-                            prevButton={<NavPrevIcon width="35" height="35" fill="#000000"/>}
-                            nextButton={<NavNextIcon width="35" height="35" fill="#000000"/>}
-                        >     
+                        <Carousel 
+                        sliderWidth={400}
+                        itemWidth={290}
+                        loop={true}
+                        enableSnap={false}
+                        inactiveSlideScale={0.8}
+                        inactiveSlideOpacity={0.3}
+                        activeSlideAlignment={'start'}
+                        // contentContainerCustomStyle={{  alignItems: 'center' }}
+                        data={this.opportunities.data} 
+                        // lockScrollWhileSnapping={true}
+                        autoplay={true}
+                        autoplayDelay={500}
+                        autoplayInterval={3000}
+                        renderItem={({ item }) => {
+                            return ( 
+                            <BoxNearItem title={item.title}
+                                         body={item.body}
+                                         taga={item.taga}
+                                         tagb={item.tagb}
+                                         price={item.price}/> 
+                             );
+                        }}
+                    />  
 
-                        <View onStartShouldSetResponder={() => true}>
-
-                            <BoxNearItem title="Two children for a weekend"  
-                                        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  
-                                        taga="Babysitter"
-                                        tagb="Preschool"
-                                        price="$ 20/h"/> 
-                                 
-
-                        </View>
-
-                        <View onStartShouldSetResponder={() => true}>
-
-                             <BoxNearItem title="Five children for a Friday"  
-                                        body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  
-                                        taga="Babysitter"
-                                        tagb="Preschool"
-                                        price="$ 20/h"/>  
-                                 
-
-                        </View>
-
-                        <View onStartShouldSetResponder={() => true}>
-
-                            <BoxNearItem title="Two children for a weekend"  
-                                            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  
-                                            taga="Baby"
-                                            tagb="Preschool"
-                                            price="$ 39/h"/>         
-                                 
-
-                        </View>
-
-                        <View onStartShouldSetResponder={() => true}>
-
-                            <BoxNearItem title="One children for six weekend"  
-                                            body="Lorem ipsum dolor sit amet, consectetur adipiscing elit"  
-                                            taga="Jung"
-                                            tagb="Preschool"
-                                            price="$ 10/h"/>       
-                                 
-
-                        </View>                                   
-
-                        </Swiper>                         
-                    
+                        
                 </SwapperArea> 
 
             </Container>

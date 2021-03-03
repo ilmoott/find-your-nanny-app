@@ -29,7 +29,7 @@ const Circle = styled.View`
 
 const Title = styled.Text`
     color: #40CE81;
-    font-size: 20px;
+    font-size: 18px;
     font-weight:bold;
     padding-bottom: 10px;
 `;
@@ -41,8 +41,7 @@ const Description = styled.Text`
 
 const Number = styled.Text`
     color: #FFFFFF; 
-    font-size: 20px;
-    font-weight:bold; 
+    font-size: 18px;
 `; 
 
 export default (props) => {

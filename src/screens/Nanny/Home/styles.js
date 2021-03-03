@@ -5,6 +5,7 @@ import styled from 'styled-components/native'
 export const SwapperArea = styled.View`
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20px;
     height: 200px;
     
 `;
