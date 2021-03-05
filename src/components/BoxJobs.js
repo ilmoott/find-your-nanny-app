@@ -41,6 +41,7 @@ const RectOne = styled.View`
 const PriceArea = styled.View`
     justify-content: center;
     align-items: center;  
+    margin-left: -30px;
     flex: 1;
 
 `;

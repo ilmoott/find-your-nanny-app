@@ -18,7 +18,7 @@ export const ScrollArea = styled.ScrollView`
 `;
 
 export const Container = styled.SafeAreaView`
-    background-color: #ffffff;
+    background-color: #F7F7F7;
     flex: 1; 
     padding-left: 20px;
     padding-right: 20px
