@@ -1,5 +1,6 @@
 import  React, {useState, useContext } from 'react' 
 import { Text } from 'react-native';
+import {useNavigation} from '@react-navigation/native'
 import { SearchBar } from 'react-native-elements';
 import { ScrollArea,
          Container, 
@@ -74,9 +75,16 @@ opportunities = {
 };        
 
 export default () => {
-
+  
+  const navigation = useNavigation();
 
   const [searchField, setSearchField] = useState('');
+
+  const handleClickSeeAll = () => {
+         
+    navigation.navigate('OtherJobs');
+    
+  }    
  
     return (
 
@@ -166,7 +174,7 @@ export default () => {
                   <Text style={{fontSize:18 ,color:'#5F9CAF', paddingBottom:15, fontWeight:'bold'}}>Other jobs</Text>  
                 </OtherJobsLeft>
 
-                <OtherJobsRight>
+                <OtherJobsRight onPress={handleClickSeeAll}>
                   <Text style={{fontSize:19 ,color:'#5F9CAF', paddingBottom:15}}>See All</Text>
                 </OtherJobsRight>
 
@@ -178,8 +186,8 @@ export default () => {
               itemWidth={290}
               loop={true}
               enableSnap={false}
-              inactiveSlideScale={0.8}
-              inactiveSlideOpacity={0.3}
+              // inactiveSlideScale={0.8}
+              // inactiveSlideOpacity={0.3}
               activeSlideAlignment={'start'}
               data={this.opportunities.data} 
               // contentContainerCustomStyle={{  alignItems: 'center' }}

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
-export const Container = styled.SafeAreaView`
-    background-color: #3EC5F0;
+export const Container = styled.SafeAreaView` 
     flex: 1; 
+    padding: 20px;
 `;
 
 export const LoadingIcon = styled.ActivityIndicator`
@@ -17,13 +17,8 @@ export const HeaderArea = styled.View`
     flex-direction: row;
         
 `
-
-
-export const BodyArea = styled.View`
-    background-color: #FFFFFF;
-    flex: 1;     
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;  
+export const BodyArea = styled.ScrollView` 
+    flex: 1;      
     padding-top: 20px;
 `
 
@@ -37,7 +32,7 @@ export const TitleArea = styled.View`
     align-items: center; 
 `
 export const TextTitle = styled.Text`
-    color: #FFFFFF;
+    color: #3EC5F0;
     font-size: 20px;
     font-weight: bold;  
     margin-left: -40px;

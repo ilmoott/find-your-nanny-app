@@ -6,18 +6,71 @@ import { Container,
          ButtonBackArea,
          TitleArea,
          TextTitle,
-         BodyArea,
-         TitleBodyArea, 
-         ListCertificationsArea,
-         FooterArea 
+         BodyArea
          } from './styles';
 
-import NavPrevIcon from '../../../../assets/nav_prev.svg';
+import NavPrevIcon from '../../../assets/nav_prev.svg';
 
-import ItemChecked from '../../../../components/ItemChecked.js';
+import BoxJobs from '../../../components/BoxJobs.js';
+
+opportunities = {
+    data: [
+    { key: "00", 
+      title: "Two children for a weekend",  
+      taga: "Babysitter", 
+      tagb: "Preschool", 
+      price: "$ 20/h" }, 
+
+    { key: "01", 
+      title: "Four children for a weekend",  
+      taga: "Baby", 
+      tagb: "Preschool", 
+      price: "$ 39/h" },
+
+      { key: "02", 
+        title: "One children for six weekend",  
+        taga: "Jung", 
+        tagb: "Preschool", 
+        price: "$ 10/h" }, 
+  
+      { key: "03", 
+        title: "Four children for a weekend",  
+        taga: "Babysitter", 
+        tagb: "Preschool", 
+        price: "$ 50/h" }, 
+  
+      
+        { key: "04", 
+        title: "Four children for a weekend A",  
+        taga: "Babysitter", 
+        tagb: "Preschool", 
+        price: "$ 33/h" }, 
+  
+      
+        { key: "05", 
+        title: "Four children for a weekend",  
+        taga: "Babysitter", 
+        tagb: "Preschool", 
+        price: "$ 22/h" }, 
+  
+      
+        { key: "06", 
+        title: "Four children for a weekend",  
+        taga: "Babysitter", 
+        tagb: "Preschool", 
+        price: "$ 41/h" }, 
+  
+      
+        { key: "07", 
+        title: "Four children for a weekend",  
+        taga: "Babysitter", 
+        tagb: "Preschool", 
+        price: "$ 14/h" }
 
 
-import GenericButton from '../../../../components/GenericButton'
+
+    ]
+};      
 
 export default () => {
 
@@ -27,13 +80,7 @@ export default () => {
          
         navigation.navigate('MainTabNanny');
         
-    }    
-
-    const handleClickNext = () => {
-          
-        navigation.navigate('Profile1');
-        
-    }        
+    }     
 
     return (
         <Container>
@@ -41,55 +88,37 @@ export default () => {
             <HeaderArea>
 
                 <ButtonBackArea onPress={handleClickBack}>
-                    <NavPrevIcon fill="#FFFFFF"/>  
+                    <NavPrevIcon fill="#3EC5F0"/>  
                 </ButtonBackArea>
                 
                 <TitleArea>
-                    <TextTitle>Checklist</TextTitle>
+                    <TextTitle>All opportunities</TextTitle>
                 </TitleArea>
 
             </HeaderArea>
 
             <BodyArea>
+ 
+                 {this.opportunities.data.map((item, index) => {
+                    return ( 
+                        <BoxJobs key={index} 
+                                title={item.title} 
+                                taga={item.taga}
+                                tagb={item.tagb}
+                                price={item.price}/>  
+                    );
+                    })}
 
-                <TitleBodyArea>
-
-                    <Text style={{color:'#5F9CAF', fontSize:24}}>Select your documentation</Text>
-
-                </TitleBodyArea>
-
-                <ListCertificationsArea>
-
-                    <ItemChecked text="Police Check"/> 
-                    <ItemChecked text="Vaccination"/> 
-                    <ItemChecked text="First Aid"/> 
-                    <ItemChecked text="Home Care"/> 
-
-                    <ItemChecked text="Item A"/>  
-                    <ItemChecked text="Item B"/>  
-                    <ItemChecked text="Item C"/>  
-                    <ItemChecked text="Item D"/>  
-                    <ItemChecked text="Item E"/>  
-                    <ItemChecked text="Item F"/>  
-                    <ItemChecked text="Item G"/>  
-                    <ItemChecked text="Item H"/>  
-                
-
-                </ListCertificationsArea>
-
+                {/* {this.opportunities.data.map((item, index) =>(                
+                            <BoxJobs key={index} 
+                            title={item.title} 
+                            taga={item.taga}
+                            tagb={item.tagb}
+                            price={item.price}/>                   
+                    ))} */}
 
             </BodyArea>
-
-            <FooterArea>
-
-                <GenericButton onPress={handleClickNext} 
-                                        text="Next" 
-                                        color='#FFFFFF'
-                                        backgroundColor='#3EC5F0'
-                                        borderColor='#FFFFFF'/>  
-            </FooterArea>
-
-
+ 
         </Container>
     );
 }

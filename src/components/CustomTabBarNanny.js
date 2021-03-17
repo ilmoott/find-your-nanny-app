@@ -24,13 +24,13 @@ const TabItem = styled.TouchableOpacity`
     margin-bottom: 15px;
 `;
 const TabItemCenter = styled.TouchableOpacity`
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     background-color: #3EC5F0;
     justify-content: center;
     align-items: center; 
     border-radius: 35px; 
-    margin-top: -20px;
+    margin-top: -15px;
 `;
 const AvatarIcon = styled.Image`
     width: 24px;
@@ -48,23 +48,23 @@ export default ({ state, navigation }) => {
     return (
         <TabArea>
             <TabItem onPress={()=>goTo('Home')}>
-                <HomeIcon style={{opacity: state.index===0? 1 : 0.8}} width="26" height="26" fill="#FFFFFF" stroke="#000000"/>
+                <HomeIcon style={{opacity: state.index===0? 1 : 0.8}} width="20" height="20" fill="#FFFFFF"/>
                 {/* <Text style={{fontSize:12}}>Home</Text>  */}
             </TabItem>
             <TabItem onPress={()=>goTo('Shedule')}>
-                <SheduleIcon style={{opacity: state.index===1? 1 : 0.8}} width="26" height="26" fill="#FFFFFF" />
+                <SheduleIcon style={{opacity: state.index===1? 1 : 0.8}} width="20" height="20" fill="#FFFFFF" />
                 {/* <Text style={{fontSize:12}}>Shedule</Text>  */}
             </TabItem>
             <TabItemCenter onPress={()=>goTo('Find')}>
-                <FindIcon width="28" height="28"/>
+                <FindIcon width="24" height="24"/>
                 {/* <Text style={{color:"#ffffff"}}>Find</Text>  */}
             </TabItemCenter>
             <TabItem onPress={()=>goTo('Wallet')}>
-                <WalletIcon style={{opacity: state.index===3? 1 : 0.8}} width="26" height="26" />
+                <WalletIcon style={{opacity: state.index===3? 1 : 0.8}} width="20" height="20" />
                 {/* <Text style={{fontSize:12}}>Wallet</Text>  */}
             </TabItem>            
             <TabItem onPress={()=>goTo('Profile')}>
-                <ProfileIcon style={{opacity: state.index===4? 1 : 0.8}} width="26" height="26" fill="#FFFFFF" />   
+                <ProfileIcon style={{opacity: state.index===4? 1 : 0.8}} width="20" height="20" fill="#FFFFFF" />   
                 {/* <Text style={{fontSize:12}}>Profile</Text>  */}
             </TabItem>
         </TabArea>
