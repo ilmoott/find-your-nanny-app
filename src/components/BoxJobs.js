@@ -7,6 +7,7 @@ const NearToItem = styled.TouchableOpacity`
     background-color: #FFFFFF;
     border-radius: 15px;
     height: 100px; 
+    margin-bottom: 15px;
 `;
 const NearToInfo = styled.View``;
 
@@ -23,7 +24,6 @@ const NearToBody = styled.Text``;
 const FooterArea = styled.View`
     
     flex-direction:row;
-
 `;
 
 const RectOne = styled.View`
@@ -41,6 +41,7 @@ const RectOne = styled.View`
 const PriceArea = styled.View`
     justify-content: center;
     align-items: center;  
+    margin-left: -30px;
     flex: 1;
 
 `;
