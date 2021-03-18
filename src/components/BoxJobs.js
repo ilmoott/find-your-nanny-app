@@ -17,10 +17,7 @@ const NearToName = styled.Text`
     font-weight:bold;
     padding-bottom: 10px;
 `;
-
-
-const NearToBody = styled.Text``;
-
+ 
 const FooterArea = styled.View`
     
     flex-direction:row;
@@ -49,7 +46,7 @@ const PriceArea = styled.View`
 export default (props) => {
     return ( 
 
-    <NearToItem>
+    <NearToItem onPress={props.onPress}>
 
         <NearToInfo>
             <NearToName>{props.title}</NearToName> 

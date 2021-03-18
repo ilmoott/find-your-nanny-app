@@ -78,9 +78,15 @@ export default () => {
 
     const handleClickBack = () => {
          
-        navigation.navigate('MainTabNanny');
+        navigation.navigate('Find');
         
     }     
+
+    const handleClickDetails = () => {
+         
+        navigation.navigate('WorkDetails');
+        
+    }         
 
     return (
         <Container>
@@ -102,6 +108,7 @@ export default () => {
                  {this.opportunities.data.map((item, index) => {
                     return ( 
                         <BoxJobs key={index} 
+                                onPress={handleClickDetails}
                                 title={item.title} 
                                 taga={item.taga}
                                 tagb={item.tagb}

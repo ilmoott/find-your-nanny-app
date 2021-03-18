@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Home from '../screens/Nanny/Home'
 import Find from '../screens/Nanny/Find'
 import OtherJobs from '../screens/Nanny/OtherJobs'
+import WorkDetails from '../screens/Nanny/WorkDetails'
 import Shedule from '../screens/Nanny/Shedule'
 import Wallet from '../screens/Nanny/Wallet'
 import Profile from '../screens/Nanny/Profile'
@@ -19,6 +20,7 @@ export default () => (
     <Tab.Navigator tabBar={props=><CustomTabBar {...props}/>}>
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="OtherJobs" component={OtherJobs} />
+        <Tab.Screen name="WorkDetails" component={WorkDetails} />
         <Tab.Screen name="Shedule" component={Shedule} />
         <Tab.Screen name="Find" component={Find} />
         <Tab.Screen name="Wallet" component={Wallet} />
