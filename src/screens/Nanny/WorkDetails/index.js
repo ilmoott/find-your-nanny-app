@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState, useContext} from 'react';
 import {useNavigation} from '@react-navigation/native'
-import { Text, Image } from 'react-native';
+import { Text, Image, Modal } from 'react-native';
 import { Container,
          HeaderArea,
          ButtonBackArea,
@@ -17,12 +17,13 @@ import { Container,
          PriceAndDateArea,
          PriceArea,
          TagsArea,
-         UserPhoto
+         ModalScreen
          } from './styles';
 
 import NavPrevIcon from '../../../assets/nav_prev.svg';
 import SheduleIcon from '../../../assets/tab_shedule.svg';
 import UserAvatar from '../../../components/User.js';
+import MessageConfirm from '../../../components/MessageConfirm.js';
 
 import Tags from '../../../components/Tags.js';
 import GenericButton from '../../../components/GenericButton.js';
@@ -33,11 +34,46 @@ export default () => {
 
     const navigation = useNavigation();
  
+    const [isModalVisible, setModalVisible] = useState(false); 
+
+
+    // Create toggleModalVisibility function that will 
+    // Open and close modal upon button clicks. 
+    const toggleModalVisibility = () => { 
+        setModalVisible(!isModalVisible); 
+    }; 
+  
+
     const handleClickBack = () => {
          
-        navigation.navigate('OtherJobs');
+        navigation.navigate('Find');
         
-    }     
+    }  
+    
+    if ( isModalVisible ){
+
+        modal = <Modal animationType="slide" 
+                    transparent visible={isModalVisible}  
+                    presentationStyle="overFullScreen" 
+                    onDismiss={toggleModalVisibility}> 
+
+                    <ModalScreen>
+            
+                        <MessageConfirm
+                            onPressConfirm={toggleModalVisibility}
+                            onPressCancel={toggleModalVisibility}
+                            title="Attention!"
+                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo vitae nisi, tincidunt."
+                        />
+
+
+                    </ModalScreen>
+                
+            
+                </Modal> 
+    }else{
+        modal = <Text/>
+    }
 
     return (
         <Container>
@@ -78,6 +114,9 @@ export default () => {
                     
                 </UserArea>
 
+
+                {modal}
+
                 <DetailsArea>
 
                     <PriceAndDateArea>
@@ -115,17 +154,22 @@ export default () => {
                     
                 </DescriptionArea>
 
+
+                {modal}
             </BodyArea>
+
 
             <FooterArea>
 
-            <GenericButton onPress={handleClickBack} 
-                            text="I want this job" 
-                            color='#FFFFFF'
-                            backgroundColor='#40CE81'
-                            borderColor='#FFFFFF'/>  
+                <GenericButton onPress={toggleModalVisibility} 
+                                text="I want this job" 
+                                color='#FFFFFF'
+                                backgroundColor='#40CE81'
+                                borderColor='#FFFFFF'/>  
 
             </FooterArea>
+
+
  
         </Container>
     );
