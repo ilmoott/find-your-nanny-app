@@ -4,6 +4,7 @@ import styled from 'styled-components/native'
 export const Container = styled.SafeAreaView` 
     flex: 1; 
     padding: 20px;
+    background-color:#F7F7F7
 `;
 
 export const LoadingIcon = styled.ActivityIndicator`
@@ -33,7 +34,7 @@ export const TitleArea = styled.View`
 `
 export const TextTitle = styled.Text`
     color: #3EC5F0;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;  
     margin-left: -40px;
 `

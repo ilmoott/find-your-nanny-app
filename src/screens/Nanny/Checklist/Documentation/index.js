@@ -86,7 +86,7 @@ export default () => {
                                         text="Next" 
                                         color='#FFFFFF'
                                         backgroundColor='#3EC5F0'
-                                        borderColor='#FFFFFF'/>  
+                                        borderColor='#F7F7F7'/>  
             </FooterArea>
 
 

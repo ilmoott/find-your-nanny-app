@@ -85,6 +85,12 @@ export default () => {
     navigation.navigate('OtherJobs');
     
   }    
+
+  const handleClickWorkDetails = () => {
+         
+    navigation.navigate('WorkDetails');
+    
+  }    
  
     return (
 
@@ -197,7 +203,8 @@ export default () => {
               // autoplayInterval={3000}
               renderItem={({ item }) => {
                   return ( 
-                  <BoxJobs title={item.title} 
+                  <BoxJobs onPress={handleClickWorkDetails}
+                           title={item.title} 
                           taga={item.taga}
                           tagb={item.tagb}
                           price={item.price}/> 
