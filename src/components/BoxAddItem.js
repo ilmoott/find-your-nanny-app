@@ -6,7 +6,6 @@ const NearToItem = styled.TouchableOpacity`
     padding: 10px;
     background-color: #FFFFFF;
     border-radius: 15px;
-    border-radius: 15px;
     height: 130px;
     width: 290px;
 `;

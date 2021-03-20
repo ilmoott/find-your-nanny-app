@@ -56,18 +56,15 @@ export default () => {
                     transparent visible={isModalVisible}  
                     presentationStyle="overFullScreen" 
                     onDismiss={toggleModalVisibility}> 
-
-                    <ModalScreen>
+ 
             
-                        <MessageConfirm
-                            onPressConfirm={toggleModalVisibility}
-                            onPressCancel={toggleModalVisibility}
-                            title="Attention!"
-                            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo vitae nisi, tincidunt."
-                        />
+                    <MessageConfirm
+                        onPressConfirm={toggleModalVisibility}
+                        onPressCancel={toggleModalVisibility}
+                        title="Attention!"
+                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo vitae nisi, tincidunt."
+                    />
 
-
-                    </ModalScreen>
                 
             
                 </Modal> 
@@ -154,8 +151,8 @@ export default () => {
                     
                 </DescriptionArea>
 
-
                 {modal}
+                
             </BodyArea>
 
 

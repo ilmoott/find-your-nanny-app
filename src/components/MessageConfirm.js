@@ -13,6 +13,15 @@ const Rect = styled.View`
     width: 90%; 
 `;   
 
+ 
+const ModalScreen = styled.View`
+
+    justify-content:center; 
+    background-color: #00000070; 
+    height: 100%;
+    align-items: center
+`;   
+
 
 const TitleArea = styled.View`
     margin-bottom: 20px;
@@ -25,30 +34,34 @@ const DescriptionArea = styled.View`
 export default (props) => {
     return ( 
  
-        <Rect> 
+        <ModalScreen>
 
-            <TitleArea>
-                <Text style={{color:'#37474F', fontSize:20}}>{props.title}</Text>                
-            </TitleArea>
+            <Rect> 
 
-            <DescriptionArea>
-                <Text style={{color:'#78909C'}}>{props.description}</Text>
-            </DescriptionArea>
-        
-            <GenericButton onPress={props.onPressConfirm}
-                            text="Confirm" 
-                            color='#FFFFFF'
-                            backgroundColor='#40CE81'
-                            borderColor='#40CE81'/>  
-        
-            <GenericButton onPress={props.onPressCancel}
-                            text="Return" 
-                            color='#78909C'
-                            backgroundColor='#FFFFFF'
-                            borderColor='#78909C'/>  
- 
+                <TitleArea>
+                    <Text style={{color:'#37474F', fontSize:20}}>{props.title}</Text>                
+                </TitleArea>
 
-        </Rect> 
+                <DescriptionArea>
+                    <Text style={{color:'#78909C'}}>{props.description}</Text>
+                </DescriptionArea>
+            
+                <GenericButton onPress={props.onPressConfirm}
+                                text="Confirm" 
+                                color='#FFFFFF'
+                                backgroundColor='#40CE81'
+                                borderColor='#40CE81'/>  
+            
+                <GenericButton onPress={props.onPressCancel}
+                                text="Return" 
+                                color='#78909C'
+                                backgroundColor='#FFFFFF'
+                                borderColor='#78909C'/>  
+    
+
+            </Rect> 
+
+        </ModalScreen>
 
 
     )
