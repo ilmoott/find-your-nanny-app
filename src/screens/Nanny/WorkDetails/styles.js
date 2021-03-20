@@ -7,15 +7,6 @@ export const Container = styled.SafeAreaView`
     background-color: #F7F7F7;
 `;
 
- 
-export const ModalScreen = styled.View`
-
-    justify-content:center; 
-    background-color: #00000070; 
-    height: 100%;
-    align-items: center
-`;   
-
 
 export const LoadingIcon = styled.ActivityIndicator`
     margin-top: 50px;
