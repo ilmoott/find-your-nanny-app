@@ -116,4 +116,5 @@ export const DescriptionArea = styled.View`
 export const FooterArea = styled.View` 
     background-color: #ffffff
     margin-bottom: 10px;
+    padding-right: 20px;
 `

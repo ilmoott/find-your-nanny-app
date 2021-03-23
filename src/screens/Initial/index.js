@@ -48,7 +48,7 @@ export default () => {
     const handleSignInClick = () => {
 
         navigation.reset({
-            routes: [{name: 'SignIn'}] // Como eu sei que isso é uma rota??
+            routes: [{name: 'SignIn'}]   
         });
 
     }
@@ -56,11 +56,12 @@ export default () => {
     const handleSignUpClick = () => {
 
         navigation.reset({
-            routes: [{name: 'SignUp'}] // Como eu sei que isso é uma rota??
+            routes: [{name: 'SignUp'}]  
         });
 
     }    
  
+    padding = 20
 
     return(
         <Container>
@@ -68,15 +69,17 @@ export default () => {
 
             <GenericButton onPress={handleSignInClick} 
                            text="Sign in"  
-                           color='#3EC5F0'
+                           color='#3EC5F0' 
                            backgroundColor='#FFFFFF'
-                           borderColor='#3EC5F0'/>
+                           borderColor='#3EC5F0'
+                           padding={padding}/>
 
             <GenericButton onPress={handleSignUpClick} 
                                     text="Register Now" 
                                     color='#FFFFFF'
                                     backgroundColor='#3EC5F0'
-                                    borderColor='#FFFFFF'/>                           
+                                    borderColor='#FFFFFF'
+                                    padding={padding}/>                           
  
 
         </Container>
