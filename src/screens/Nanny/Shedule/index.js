@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+import {useNavigation} from '@react-navigation/native'
 import { Text, View } from 'react-native';
 import {Calendar, calendarTheme, Agenda } from 'react-native-calendars'; 
 import { Avatar, Card } from 'react-native-paper';
@@ -13,6 +15,13 @@ const timeToString = (time) => {
 
 export default () => {
 
+  const navigation = useNavigation();
+
+  const handleClickJob = () => {
+       
+      navigation.navigate('Job');
+      
+  }     
     const [items, setItems] = useState({})
 
     const loadItems = (day) => {
@@ -43,7 +52,7 @@ export default () => {
 
         return(
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={handleClickJob}>
                 <Card>
                     <Card.Content>
                         <View
