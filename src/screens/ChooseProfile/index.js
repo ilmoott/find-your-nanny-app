@@ -74,7 +74,7 @@ export default () => {
                         <TextButtonArea>
                             <TextButton>I'm nanny</TextButton> 
                         </TextButtonArea>
-                        <NavButton>                        
+                        <NavButton onPress={handleClickNanny}>                        
                             <NavNextIcon fill="#3EC5F0"/>       
                         </NavButton>      
                     </ProfileButton>
@@ -83,7 +83,7 @@ export default () => {
                         <TextButtonArea>
                             <TextButton>I'm parent</TextButton> 
                         </TextButtonArea> 
-                        <NavButton>                        
+                        <NavButton onPress={handleClickNanny}>                        
                             <NavNextIcon fill="#3EC5F0"/>       
                         </NavButton>                     
                     </ProfileButton>

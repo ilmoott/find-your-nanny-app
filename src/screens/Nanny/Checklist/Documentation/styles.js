@@ -54,4 +54,7 @@ export const ListCertificationsArea = styled.ScrollView`
 
 export const FooterArea = styled.View` 
     background-color: #ffffff
+    padding-left: 5%;
+    padding-right: 5%;
+
 `

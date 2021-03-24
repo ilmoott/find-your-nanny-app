@@ -39,11 +39,11 @@ export const SignMessageButton = styled.TouchableOpacity`
 `;
 export const SignMessageButtonText = styled.Text`
     font-size: 16px;
-    color: #268596;
+    color: #3EC5F0;
 `;
 export const SignMessageButtonTextBold = styled.Text`
     font-size: 16px;
-    color: #268596;
+    color: #3EC5F0;
     font-weight: bold;
     margin-left: 5px;
 `;

@@ -11,13 +11,15 @@ import { Container,
          FooterArea,
          FooterButton,
          FooterButtonText,
-         TipText
+         TipText,
+         TipTextArea
         } from './styles.js'
  
 import AsyncStorage from '@react-native-community/async-storage'
 
 import{ useNavigation } from '@react-navigation/native'
 import NavPrevIcon from '../../assets/nav_prev.svg'; 
+import ScrollIcon from '../../assets/scroll_to_the_end.svg'; 
  
 import { UserContext } from '../../contexts/UserContext'     
 import { isEnabled } from 'react-native/Libraries/Performance/Systrace';
@@ -65,7 +67,7 @@ export default () => {
                 <NavButtonHead onPress={handleClickBack}>
                     <NavPrevIcon fill="#FFFFFF"/>  
                 </NavButtonHead> 
-                <TextTitleArea>                    
+                <TextTitleArea>              
                     <TextTitle>Register</TextTitle>
                 </TextTitleArea> 
             </HeadArea>
@@ -138,7 +140,10 @@ export default () => {
                  
 
                 <FooterArea>
-                    <TipText>Scroll to the end to sign</TipText>
+                    <TipTextArea>    
+                        <ScrollIcon/>  
+                        <TipText>Scroll to the end to sign</TipText>
+                    </TipTextArea>
                     <FooterButton style={activedButton ? {opacity:1} : {opacity:0.5}}
                                   onPress={handleClickAcceptTerms}
                                   disabled={!activedButton}>

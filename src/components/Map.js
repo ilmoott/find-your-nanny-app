@@ -32,29 +32,29 @@ export default () => {
  
 
     return ( 
-    
-      <View style={styles.container}>
+     
         <MapView
             style={ styles.map }
             initialRegion={{
-              latitude: 37.78825,
-              longitude: -122.4384,
+              latitude: 40.71939,
+              longitude: -73.99014,
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421,
             }}
         >
                 <Marker
                     coordinate={{
-                        latitude: 37.78825,
-                        longitude: -122.4324 
+                      latitude: 40.71939,
+                      longitude: -73.99014,
                     }}
                     title='Emma Sores'
                     description='80 Delancey St, New York, NY, 10002, USA'
-                    icon={{ uri: 'https://img.icons8.com/plasticine/1x/baby.png'}}
+                    icon={{ uri: 'https://i.ibb.co/KrnXvG7/Pngtree-baby-pregnant-baby-baby-baby-png-image-426384-removebg-preview.png'}} 
+
+                
                 
                 />
-          </MapView>
-      </View>
+          </MapView> 
  
     )
 }

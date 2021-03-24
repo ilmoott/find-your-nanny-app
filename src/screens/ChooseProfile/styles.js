@@ -52,14 +52,14 @@ export const ProfileButton = styled.TouchableOpacity`
 `;
 
 export const TextButton = styled.Text`
-    color: #959595;
-    font-size: 18px;
-    font-weight: bold;
+    color: #3EC5F0;
+    font-size: 18px; 
 `;
 
 export const NavButtonHead = styled.TouchableOpacity`
     width: 40px;
     height: 40px;
+    margin-left: 20px;
 `;
 
 export const NavButton = styled.TouchableOpacity`
@@ -74,8 +74,8 @@ export const TextTitleArea = styled.View`
 `;
 
 export const TextButtonArea = styled.View` 
-    flex : 1;
-    align-items: center; 
+    flex : 1; 
+    margin-left: 15px;
     justify-content: center;
 `;
 
