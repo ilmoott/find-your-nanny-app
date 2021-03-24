@@ -10,7 +10,7 @@ export const LoadingIcon = styled.ActivityIndicator`
     margin-top: 50px;
 `
 
-export const MapArea = styled.View`
+export const MapArea = styled.ScrollView`
     height: 60%;   
         
 `  
@@ -30,6 +30,11 @@ export const BodyArea = styled.View`
 `
 
 export const ButtonBackArea = styled.TouchableOpacity`
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
     margin-top: 20px;
     margin-left: 20px;
     background-color:#3EC5F0
@@ -37,9 +42,25 @@ export const ButtonBackArea = styled.TouchableOpacity`
     height:50px;
     border-radius: 50px;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
 `
- 
+
+export const Fab = styled.View`
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+`
+
+export const FixedView = styled.View`
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    flex-direction: row;
+    justify-content: flex-end
+` 
+
 export const TextTitle = styled.Text`
     color: #455A64;
     font-size: 22px;
@@ -89,6 +110,5 @@ export const ListCertificationsArea = styled.ScrollView`
 
 export const FooterArea = styled.View` 
     background-color: #ffffff
-    margin-bottom: 15px; 
-    padding-right: 20px;
+    margin-bottom: 15px;  
 `

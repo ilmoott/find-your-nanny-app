@@ -70,4 +70,6 @@ export const FooterArea = styled.View`
 
     background-color: #ffffff;
     align-items: center; 
+    padding-right: 5%;
+    padding-left: 5%;
 `

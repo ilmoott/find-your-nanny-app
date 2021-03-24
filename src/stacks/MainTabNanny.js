@@ -6,7 +6,7 @@ import Find from '../screens/Nanny/Find'
 import OtherJobs from '../screens/Nanny/OtherJobs'
 import Job from '../screens/Nanny/Job'
 import WorkDetails from '../screens/Nanny/WorkDetails'
-import Shedule from '../screens/Nanny/Job'
+import Shedule from '../screens/Nanny/Shedule'
 import Wallet from '../screens/Nanny/Wallet'
 import Profile from '../screens/Nanny/Profile'
 

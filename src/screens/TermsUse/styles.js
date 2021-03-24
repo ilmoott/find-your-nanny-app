@@ -18,6 +18,7 @@ export const HeadArea = styled.View`
 export const NavButtonHead = styled.TouchableOpacity`
     width: 40px;
     height: 40px;
+    margin-left: 20px;
 `;
 
 export const TextTitleArea = styled.View` 
@@ -66,11 +67,15 @@ export const FooterArea = styled.View`
     margin-bottom: 15px;
 `;
 
+export const TipTextArea = styled.View`  
+    flex-direction: row;
+    margin-top: 20px;
+`;
+
 export const TipText = styled.Text` 
     color: #3EC5F0;
-    font-size: 18px;
-    font-weight: bold;   
-    margin-top: 20px;
+    font-size: 18px;  
+    margin-left: 10px;
 `;
 
 export const FooterButton = styled.TouchableOpacity` 

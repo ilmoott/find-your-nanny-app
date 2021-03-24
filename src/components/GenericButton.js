@@ -4,7 +4,7 @@ import { ShadowPropTypesIOS, Text } from 'react-native';
 
 
 const AreaSignOut = styled.TouchableOpacity`
-    margin: 10px;
+    margin-top: 10px;
     width: 100%;
 `;
 

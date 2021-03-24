@@ -87,5 +87,7 @@ export const CityArea = styled.View`
  
 
 export const FooterArea = styled.View` 
+    padding-right: 5%;
+    padding-left: 5%;
     background-color: #ffffff
 `

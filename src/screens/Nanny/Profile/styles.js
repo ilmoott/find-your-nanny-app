@@ -9,8 +9,8 @@ export const Container = styled.SafeAreaView`
 
 
 export const AreaSignOut = styled.TouchableOpacity`
-
-    margin: 15px;
+    margin-right: 25px;
+    margin-left: 25px;
 `;
 
 

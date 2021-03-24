@@ -13,7 +13,9 @@ import { Container,
          ScrollArea,
          PriceArea,
          PriceHour,
-         PriceTotal 
+         PriceTotal,
+         Fab,
+         FixedView
          } from './styles';
 
 import NavPrevIcon from '../../../assets/nav_prev.svg';
@@ -67,16 +69,14 @@ export default () => {
 
     return (
         <Container> 
-                
-            <MapArea>
-                <ButtonBackArea onPress={handleClickBack}>
-                    <NavPrevIcon fill="#FFFFFF"/>  
-                </ButtonBackArea>
-
-
-            </MapArea>
-
+            
+            <MapArea/> 
+            
             <Map/>
+
+            <ButtonBackArea onPress={handleClickBack}>
+                <NavPrevIcon fill="#FFFFFF"/>  
+            </ButtonBackArea>
 
             <ScrollArea>
 
