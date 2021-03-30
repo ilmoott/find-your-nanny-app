@@ -4,7 +4,7 @@ import { ShadowPropTypesIOS, Text } from 'react-native';
 
 
 const AreaSignOut = styled.TouchableOpacity`
-    margin-top: 10px;
+    margin-top: 10px; 
     width: 100%;
 `;
 
@@ -19,9 +19,11 @@ const ButtonSignOut = styled.View`
 
 export default (props) => {
     {padding = (props.padding > 0 ? props.padding : 15) }
+    {marginRight = (props.marginRight > 0 ? parseInt(props.marginRight) : 0) }
+    {width = (props.width ? props.width : '100%') }
   
     return (
-        <AreaSignOut onPress={props.onPress}>
+        <AreaSignOut style={{width: width, marginRight: marginRight}} onPress={props.onPress}>
             <ButtonSignOut style={{backgroundColor: props.backgroundColor, borderColor:props.borderColor, 
                                    paddingTop:padding, paddingBottom: padding}}>
                 <Text style={{color:props.color, fontSize:16}}>{props.text}</Text>

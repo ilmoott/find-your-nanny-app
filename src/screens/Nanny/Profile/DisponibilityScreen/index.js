@@ -16,16 +16,12 @@ import { Container,
          ProfileButtonArea } from './styles';
 import GenericButton from '../../../components/GenericButton.js'
 import User from '../../../components/User.js'
-import BasicScreen from './BasicScreen/BasicScreen' 
-import DisponibilityScreen from './BasicScreen/DisponibilityScreen' 
-import OtherScreen from './BasicScreen/OtherScreen' 
 
 
 export default () => {
 
 
 const navigation = useNavigation();
-let activeScreen = 'Basic'
 
 borderColor = '#3EC5F0'
 fontColor = '#FFFFFF'
@@ -35,7 +31,7 @@ borderDisableColor = '#B0BEC5'
 fontDisableColor = '#B0BEC5'
 backgroundDisableColor = '#FFFFFF'
 
-const [tabActive, setTabActive] = useState(activeScreen);
+const [tabActive, setTabActive] = useState('Basic');
 
 const handleLogout = () => {
 
@@ -50,23 +46,6 @@ const handleTab = (param) => {
     setTabActive(param)
     
      
-}
-
-modal = <Text/>
-
-if ( activeScreen === 'Basic' ){
-
-    modal = <BasicScreen/>
-}
-
-if ( activeScreen === 'Disponibility' ){
-
-    modal = <DisponibilityScreen/>
-}
-
-if ( activeScreen === 'Others' ){
-
-    modal = <OtherScreen/>
 }
 
     return (
