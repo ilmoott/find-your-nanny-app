@@ -66,6 +66,7 @@ export const TextTitle = styled.Text`
     font-size: 22px;
     font-weight: bold;   
 `
+
 export const MiniTitle = styled.Text`    
     color: #78909C;
     font-size: 18px; 
@@ -111,4 +112,4 @@ export const ListCertificationsArea = styled.ScrollView`
 export const FooterArea = styled.View` 
     background-color: #ffffff
     margin-bottom: 15px;  
-`
+`                       
