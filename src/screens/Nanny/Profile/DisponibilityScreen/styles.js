@@ -3,9 +3,8 @@ import styled from 'styled-components/native'
 
 export const Container = styled.SafeAreaView`
     background-color: #ffffff;  
-    flex: 1;  
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top: 20px;
+    flex: 1;   
 `;
 
 

@@ -1,130 +1,155 @@
 import React, {useState} from 'react';
 import { Text } from 'react-native';
 import {useNavigation} from '@react-navigation/native'
-import { Container, 
-         AreaSignOut, 
-         ButtonSignOut,
-         HeaderArea,
-         ProfileArea,
-         ButtonTabArea,
-         SubScreenArea,
+import { ScrollArea,
+         Container,   
          TextTitle,
-         MiniTitle,
-         NameUser, 
-         ProfilePhotoArea,
-         ProfileNameArea,
-         ProfileButtonArea } from './styles';
-import GenericButton from '../../../components/GenericButton.js'
-import User from '../../../components/User.js'
+         SwapperArea,
+         MiniTitle } from './styles';
+import Carousel from 'react-native-snap-carousel';
 
+import BoxCertification from '../../../../components/BoxCertification.js' 
+import BoxInterested from '../../../../components/TagInterested.js' 
+
+import FirstAidIcon from '../../../../assets/hospital_icon.svg' 
+import DocumentIcon from '../../../../assets/document_icon.svg' 
+import PlusIcon from '../../../../assets/Plus.svg' 
+import CloseIcon from '../../../../assets/close_icon.svg' 
 
 export default () => {
 
+    const navigation = useNavigation();
 
-const navigation = useNavigation();
-
-borderColor = '#3EC5F0'
-fontColor = '#FFFFFF'
-backgroundColor = '#3EC5F0' 
-
-borderDisableColor = '#B0BEC5'
-fontDisableColor = '#B0BEC5'
-backgroundDisableColor = '#FFFFFF'
-
-const [tabActive, setTabActive] = useState('Basic');
-
-const handleLogout = () => {
-
-    navigation.reset({
-        routes:[{name:'SignIn'}] 
-    })
-
-}
-
-const handleTab = (param) => {
-
-    setTabActive(param)
+    documents = {
+        data: [
+        { id: "00",  
+          text: "Add" }, 
+        
+        { id: "01",  
+          text: "First Aid" }, 
     
-     
-}
+        { id: "02",  
+        text: "Driver License" }, 
+        
+        { id: "03",  
+        text: "Lorem Aid" }, 
+        
+        { id: "04",  
+            text: "First ipsum" }, 
+        ]
+    };   
 
-    return (
-        <Container>
+    interested = {
+        data: [
+        { id: "00",  
+          text: "Add" }, 
+        
+        { id: "01",  
+          text: "Music" }, 
+    
+        { id: "02",  
+        text: "Running" },  
+        ]
+    };   
 
-            <HeaderArea>
+return (
 
-                <TextTitle>Your Profile</TextTitle>
+    <ScrollArea> 
 
-            </HeaderArea>
+        <MiniTitle>Biography</MiniTitle>
 
-            <ProfileArea>
+        <TextTitle>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                    nisi ut aliquip ex ea commodo consequat</TextTitle>
 
-                <ProfilePhotoArea>
-                    <User/>
-                </ProfilePhotoArea>
+        <MiniTitle>Certification</MiniTitle> 
 
-                <ProfileNameArea>
+        <SwapperArea>
 
-                    <NameUser>Emma Soares</NameUser>
+            <Carousel 
+                sliderWidth={400}
+                itemWidth={106}
+                loop={true}
+                enableSnap={false}
+                // inactiveSlideScale={0.8}
+                // inactiveSlideOpacity={0.3}
+                activeSlideAlignment={'start'}
+                data={this.documents.data} 
+                // contentContainerCustomStyle={{  alignItems: 'center' }}
+                // lockScrollWhileSnapping={true}
+                // autoplay={true}
+                // autoplayDelay={500}
+                // autoplayInterval={3000}
+                
+                renderItem={({ item }) => {
 
-                    <ProfileButtonArea>
+                        icon = <FirstAidIcon width="55" height="55"/>
+                        backgroundColor = '#8EE1BE'
+                        textColor = '#FFFFFF'
 
-                        <GenericButton text="Edit Infos" 
-                                            color='#3EC5F0'
-                                            backgroundColor='#FFFFFF'
-                                            borderColor='#3EC5F0'
-                                            width='40%'
-                                            marginRight='10'/>  
+                        if (item.text != "First Aid"){
+                            icon = <DocumentIcon width="55" height="55"/>
+                        } 
 
-                        <GenericButton text="Logout" 
-                                    onPress={handleLogout} 
-                                    color='#3EC5F0'
-                                    backgroundColor='#FFFFFF'
-                                    borderColor='#3EC5F0'
-                                    width='40%'/>  
+                        if (item.text == "Add"){
+                            icon = <PlusIcon width="55" height="55"/>
+                            backgroundColor = '#FFFFFF'
+                            textColor = '#B0BEC5'
+                        }
+                    return (   
+                        <BoxCertification text={item.text}
+                                        icon={icon}
+                                        backgroundColor={backgroundColor}  
+                                        textColor={textColor}/> 
+                        );
+                }}
+            />  
+
+        </SwapperArea>
 
 
-                    </ProfileButtonArea>
+        <MiniTitle>Interested</MiniTitle> 
 
-                </ProfileNameArea>
+        <SwapperArea>
 
-            </ProfileArea>
+            <Carousel 
+                sliderWidth={400}
+                itemWidth={113}
+                loop={true}
+                enableSnap={false}
+                // inactiveSlideScale={0.8}
+                // inactiveSlideOpacity={0.3}
+                activeSlideAlignment={'start'}
+                data={this.interested.data} 
+                // contentContainerCustomStyle={{  alignItems: 'center' }}
+                // lockScrollWhileSnapping={true}
+                // autoplay={true}
+                // autoplayDelay={500}
+                // autoplayInterval={3000}
+                
+                renderItem={({ item }) => {
 
-            <ButtonTabArea>
+                        icon = <CloseIcon width="25" height="25"/>
+                        backgroundColor = '#5F9CAF'
+                        textColor = '#FFFFFF'
 
-                <GenericButton text="Basic"  
-                                color={tabActive==="Basic"? fontColor : fontDisableColor}
-                                backgroundColor={tabActive==="Basic"? backgroundColor : backgroundDisableColor}
-                                borderColor={tabActive==="Basic"? borderColor : borderDisableColor}
-                                width='33%'
-                                onPress={ () => handleTab("Basic")}/>  
+                        if (item.text == "Add"){
+                            icon = <PlusIcon width="25" height="25"/>
+                            backgroundColor = '#FFFFFF'
+                            textColor = '#B0BEC5'
+                        }
+                    return (   
+                        <BoxInterested text={item.text}
+                                        icon={icon}
+                                        backgroundColor={backgroundColor}  
+                                        textColor={textColor}/> 
+                        );
+                }}
+            />  
+        </SwapperArea> 
 
-                <GenericButton text="Disponibility"  
-                                color={tabActive==="Disponibility"? fontColor : fontDisableColor}
-                                backgroundColor={tabActive==="Disponibility"? backgroundColor : backgroundDisableColor}
-                                borderColor={tabActive==="Disponibility"? borderColor : borderDisableColor}
-                                width='35%'
-                                onPress={() => handleTab("Disponibility")}/>  
-
-                <GenericButton text="Others"  
-                                color={tabActive==="Others"? fontColor : fontDisableColor}
-                                backgroundColor={tabActive==="Others"? backgroundColor : backgroundDisableColor}
-                                borderColor={tabActive==="Others"? borderColor : borderDisableColor}
-                                width='33%'
-                                onPress={() => handleTab("Others")}/>                                                                   
-
-            </ButtonTabArea>
-
-            <SubScreenArea>
-
-            </SubScreenArea>
-
-            {/* <Text>Profile</Text>
-            <AreaSignOut onPress={handleLogout}>
-                <ButtonSignOut>
-                    <Text style={{color:"#ffffff", fontWeight:'bold', fontSize:20}}>Logout</Text>
-                </ButtonSignOut>
-            </AreaSignOut> */}
-        </Container>
-    );
+    </ScrollArea>
+   
+);
 }

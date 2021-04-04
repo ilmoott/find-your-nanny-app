@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Text } from 'react-native';
 import {useNavigation} from '@react-navigation/native'
 import { Container, 
-         AreaSignOut, 
+         ScrollArea, 
          ButtonSignOut,
          HeaderArea,
          ProfileArea,
@@ -16,9 +16,9 @@ import { Container,
          ProfileButtonArea } from './styles';
 import GenericButton from '../../../components/GenericButton.js'
 import User from '../../../components/User.js'
-import BasicScreen from './BasicScreen/BasicScreen' 
-import DisponibilityScreen from './BasicScreen/DisponibilityScreen' 
-import OtherScreen from './BasicScreen/OtherScreen' 
+import BasicScreen from './BasicScreen' 
+import DisponibilityScreen from './DisponibilityScreen' 
+import OtherScreen from './OtherScreen' 
 
 
 export default () => {
@@ -35,7 +35,8 @@ borderDisableColor = '#B0BEC5'
 fontDisableColor = '#B0BEC5'
 backgroundDisableColor = '#FFFFFF'
 
-const [tabActive, setTabActive] = useState(activeScreen);
+const [tabActive, setTabActive] = useState(<BasicScreen/>);
+const [tabNameActive, setTabNameActive] = useState('Basic');
 
 const handleLogout = () => {
 
@@ -46,27 +47,25 @@ const handleLogout = () => {
 }
 
 const handleTab = (param) => {
-
-    setTabActive(param)
     
-     
-}
+    if ( param == 'Basic' ){
+    
+        modal = <BasicScreen/>
+    }
+    
+    if ( param == 'Disponibility' ){
+    
+        modal = <DisponibilityScreen/>
+    }
+    
+    if ( param == 'Others' ){
+    
+        modal = <OtherScreen/>
+    }
+    
 
-modal = <Text/>
-
-if ( activeScreen === 'Basic' ){
-
-    modal = <BasicScreen/>
-}
-
-if ( activeScreen === 'Disponibility' ){
-
-    modal = <DisponibilityScreen/>
-}
-
-if ( activeScreen === 'Others' ){
-
-    modal = <OtherScreen/>
+    setTabActive(modal)       
+    setTabNameActive(param)       
 }
 
     return (
@@ -114,29 +113,31 @@ if ( activeScreen === 'Others' ){
             <ButtonTabArea>
 
                 <GenericButton text="Basic"  
-                                color={tabActive==="Basic"? fontColor : fontDisableColor}
-                                backgroundColor={tabActive==="Basic"? backgroundColor : backgroundDisableColor}
-                                borderColor={tabActive==="Basic"? borderColor : borderDisableColor}
+                                color={tabNameActive==="Basic"? fontColor : fontDisableColor}
+                                backgroundColor={tabNameActive==="Basic"? backgroundColor : backgroundDisableColor}
+                                borderColor={tabNameActive==="Basic"? borderColor : borderDisableColor}
                                 width='33%'
                                 onPress={ () => handleTab("Basic")}/>  
 
                 <GenericButton text="Disponibility"  
-                                color={tabActive==="Disponibility"? fontColor : fontDisableColor}
-                                backgroundColor={tabActive==="Disponibility"? backgroundColor : backgroundDisableColor}
-                                borderColor={tabActive==="Disponibility"? borderColor : borderDisableColor}
+                                color={tabNameActive==="Disponibility"? fontColor : fontDisableColor}
+                                backgroundColor={tabNameActive==="Disponibility"? backgroundColor : backgroundDisableColor}
+                                borderColor={tabNameActive==="Disponibility"? borderColor : borderDisableColor}
                                 width='35%'
                                 onPress={() => handleTab("Disponibility")}/>  
 
                 <GenericButton text="Others"  
-                                color={tabActive==="Others"? fontColor : fontDisableColor}
-                                backgroundColor={tabActive==="Others"? backgroundColor : backgroundDisableColor}
-                                borderColor={tabActive==="Others"? borderColor : borderDisableColor}
+                                color={tabNameActive==="Others"? fontColor : fontDisableColor}
+                                backgroundColor={tabNameActive==="Others"? backgroundColor : backgroundDisableColor}
+                                borderColor={tabNameActive==="Others"? borderColor : borderDisableColor}
                                 width='33%'
                                 onPress={() => handleTab("Others")}/>                                                                   
 
             </ButtonTabArea>
 
             <SubScreenArea>
+
+                {tabActive}
 
             </SubScreenArea>
 
