@@ -2,14 +2,16 @@ import React from 'react'
 import styled from 'styled-components/native'
 
 
-export const ScrollArea = styled.ScrollView`     
+export const ScrollArea = styled.ScrollView`
+  background-color: #ffffff;
+  flex: 1;
+  padding-left: 5px;
+  padding-right: 5px;
 `;   
 
 export const Container = styled.View`
     background-color: #ffffff;  
     flex: 1;  
-    padding-left: 5px;
-    padding-right: 5px;
 `;
 
 export const SwapperArea = styled.View`

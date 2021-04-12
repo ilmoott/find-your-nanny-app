@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
-export const Container = styled.SafeAreaView`
+export const ScrollArea = styled.ScrollView`     
+`;
+
+export const Container = styled.View`
     background-color: #ffffff;  
     flex: 1;  
     padding-left: 25px;
@@ -9,22 +12,29 @@ export const Container = styled.SafeAreaView`
 `;
 
 
-export const AreaSignOut = styled.TouchableOpacity`
-    margin-right: 25px;
-    margin-left: 25px;
-`;
-
-
-export const ButtonSignOut = styled.View`
-    background-color: #3EC5F0; 
-    align-items: center; 
-    margin-top: 10px;
-    margin-bottom: 20px;  
-    padding: 20px;
-    border-radius: 10px;
+export const VaccinationArea = styled.View`
+  background-color: #FFFFFF;
+  align-items: center;
+  margin-top: 10px; 
+  padding-left: 55px;
+  border-radius: 10px;
+  height: 80px
 
 `;
 
+
+export const WorkHistoryArea = styled.View`
+  background-color: #FFFFFF;
+  align-items: center;
+  margin-top: 10px; 
+  border-radius: 10px;
+
+`;
+
+export const SwapperArea = styled.View`
+    padding-top: 10px;  
+    
+`;
 export const TextTitle = styled.Text`
     color: #455A64;
     font-size: 32px;   
@@ -35,47 +45,6 @@ export const MiniTitle = styled.Text`
     margin-top: 10px; 
     font-weight: bold;   
 `
-
-
-export const NameUser = styled.Text`
-    color: #455A64;
-    font-size: 24px; 
-`
-
-export const HeaderArea = styled.View`  
-    margin-top: 20px;
-    margin-bottom: 40px;
-    height: 60px;
-    justify-content: center; 
-`;
-
-export const ProfileArea = styled.View` 
-    flex-direction: row; 
-    
-`;
-
-export const ProfilePhotoArea = styled.View` 
-    
-    margin-right: 25px;
-`;
-
-export const ProfileNameArea = styled.View` 
-
-`;
-
-export const ProfileButtonArea = styled.View` 
-    flex-direction: row;
-`;
-
-export const ButtonTabArea = styled.View` 
-    margin-top: 50px;
-    flex-direction: row; 
-`;
-
-export const SubScreenArea = styled.View` 
-
-`;
-
 
 export const LoadingIcon = styled.ActivityIndicator`
     margin-top: 50px;
