@@ -10,7 +10,7 @@ const Box = styled.TouchableOpacity`
     border-color: #3EC5F0;
     border-radius: 15px;
     height: 74px; 
-    width: 366px;  
+    width: 100%;  
     align-items: center;
     flex-direction: row;
 `; 

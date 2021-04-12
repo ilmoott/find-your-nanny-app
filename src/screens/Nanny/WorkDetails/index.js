@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useRef} from 'react';
 import {useNavigation} from '@react-navigation/native'
 import { Text, Image, Modal } from 'react-native';
 import { Container,
@@ -33,31 +33,30 @@ import BoxUser from '../../../components/BoxUser.js';
 export default () => {
 
     const navigation = useNavigation();
- 
-    const [isModalVisible, setModalVisible] = useState(false); 
+    const [isModalVisible, setModalVisible] = useState(false);
 
 
-    // Create toggleModalVisibility function that will 
-    // Open and close modal upon button clicks. 
-    const toggleModalVisibility = () => { 
-        setModalVisible(!isModalVisible); 
-    }; 
-  
+    // Create toggleModalVisibility function that will
+    // Open and close modal upon button clicks.
+    const toggleModalVisibility = () => {
+        setModalVisible(!isModalVisible);
+    };
+
 
     const handleClickBack = () => {
          
         navigation.navigate('Find');
         
     }  
-    
+
     if ( isModalVisible ){
 
-        modal = <Modal animationType="slide" 
-                    transparent visible={isModalVisible}  
-                    presentationStyle="overFullScreen" 
-                    onDismiss={toggleModalVisibility}> 
- 
-            
+        modal = <Modal animationType="slide"
+                    transparent visible={isModalVisible}
+                    presentationStyle="overFullScreen"
+                    onDismiss={toggleModalVisibility}>
+
+
                     <MessageConfirm
                         onPressConfirm={toggleModalVisibility}
                         onPressCancel={toggleModalVisibility}
@@ -65,9 +64,9 @@ export default () => {
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo vitae nisi, tincidunt."
                     />
 
-                
-            
-                </Modal> 
+
+
+                </Modal>
     }else{
         modal = <Text/>
     }
@@ -150,8 +149,6 @@ export default () => {
                 </WorkTextSubtitle>       
                     
                 </DescriptionArea>
-
-                {modal}
                 
             </BodyArea>
 
