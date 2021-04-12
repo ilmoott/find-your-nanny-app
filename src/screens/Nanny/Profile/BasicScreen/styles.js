@@ -1,42 +1,35 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
-export const Container = styled.SafeAreaView`
+
+export const ScrollArea = styled.ScrollView`     
+`;   
+
+export const Container = styled.View`
     background-color: #ffffff;  
     flex: 1;  
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 5px;
+    padding-right: 5px;
 `;
 
+export const SwapperArea = styled.View`
+    padding-top: 10px;  
+    
+`;   
 
-export const AreaSignOut = styled.TouchableOpacity`
-    margin-right: 25px;
-    margin-left: 25px;
-`;
-
-
-export const ButtonSignOut = styled.View`
-    background-color: #3EC5F0; 
-    align-items: center; 
-    margin-top: 10px;
-    margin-bottom: 20px;  
-    padding: 20px;
-    border-radius: 10px;
-
-`;
-
-export const TextTitle = styled.Text`
-    color: #455A64;
-    font-size: 32px;   
-`
 export const MiniTitle = styled.Text`    
     color: #78909C;
     font-size: 18px; 
-    margin-top: 10px; 
+    margin-top: 15px; 
+    margin-bottom: 15px; 
     font-weight: bold;   
 `
 
-
+export const TextTitle = styled.Text`
+    color: #37474F;
+    font-size: 14px; 
+    margin-bottom: 20px;
+`
 export const NameUser = styled.Text`
     color: #455A64;
     font-size: 24px; 

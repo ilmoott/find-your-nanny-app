@@ -48,7 +48,7 @@ export default ({ state, navigation }) => {
     return (
         <TabArea>
             <TabItem onPress={()=>goTo('Home')}>
-                <HomeIcon style={{opacity: state.index===0? 1 : 0.8}} width="20" height="20" fill="#FFFFFF"/>
+                <HomeIcon style={{opacity: state.index===0? 1 : 0.8}} width="20" height="20" fill="#000000"/>
                 {/* <Text style={{fontSize:12}}>Home</Text>  */}
             </TabItem>
             <TabItem onPress={()=>goTo('Shedule')}>

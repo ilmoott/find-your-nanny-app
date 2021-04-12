@@ -79,8 +79,7 @@ export default () => {
                                     color='#FFFFFF'
                                     backgroundColor='#3EC5F0'
                                     borderColor='#FFFFFF'
-                                    padding={padding}/>                           
- 
+                                    padding={padding}/>     
 
         </Container>
     );

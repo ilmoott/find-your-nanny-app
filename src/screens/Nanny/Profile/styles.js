@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components/native'
 
-export const Container = styled.SafeAreaView`
-    background-color: #ffffff;  
-    flex: 1;  
-    padding-left: 25px;
-    padding-right: 25px;
+export const ScrollArea = styled.ScrollView`     
+`;   
+export const Container = styled.ScrollView`
+    background-color: #FFFFFF;  
+    padding-left: 10px;
+    padding-right: 10px; 
 `;
 
 
@@ -68,7 +69,9 @@ export const ProfileButtonArea = styled.View`
 `;
 
 export const ButtonTabArea = styled.View` 
-    margin-top: 50px;
+    margin-top: 50px; 
+    padding-left: 5px;
+    padding-right: 5px;
     flex-direction: row; 
 `;
 
