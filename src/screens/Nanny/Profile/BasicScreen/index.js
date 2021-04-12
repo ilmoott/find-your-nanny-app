@@ -54,7 +54,7 @@ export default () => {
 
 return (
 
-    <ScrollArea> 
+    <ScrollArea>
 
         <MiniTitle>Biography</MiniTitle>
 
