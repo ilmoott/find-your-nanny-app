@@ -46,19 +46,25 @@ const handleLogout = () => {
 
 }
 
-const handleTab = (param) => {
+const handleClickEditInfo = () => {
+
+    navigation.navigate('EditInfo');
+
+}
+
+    const handleTab = (param) => {
     
-    if ( param == 'Basic' ){
+    if ( param === 'Basic' ){
     
         modal = <BasicScreen/>
     }
     
-    if ( param == 'Disponibility' ){
+    if ( param === 'Disponibility' ){
     
         modal = <DisponibilityScreen/>
     }
     
-    if ( param == 'Others' ){
+    if ( param === 'Others' ){
     
         modal = <OtherScreen/>
     }
@@ -89,7 +95,8 @@ const handleTab = (param) => {
 
                     <ProfileButtonArea>
 
-                        <GenericButton text="Edit Infos" 
+                        <GenericButton text="Edit Infos"
+                                       onPress={handleClickEditInfo}
                                             color='#3EC5F0'
                                             backgroundColor='#FFFFFF'
                                             borderColor='#3EC5F0'

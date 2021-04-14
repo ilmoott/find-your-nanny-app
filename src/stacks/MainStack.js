@@ -4,14 +4,15 @@ import Preload from '../screens/Preload'
 import Initial from '../screens/Initial'
 import SignIn from '../screens/SignIn'
 import SignUp from '../screens/SignUp' 
-import ChooseProfile from '../screens/ChooseProfile' 
+import ChooseProfile from '../screens/ChooseProfile'
 import TermsUse from '../screens/TermsUse' 
 import MainTabNanny from '../stacks/MainTabNanny' 
 import Documentation from '../screens/Nanny/Checklist/Documentation' 
 import Profile1 from '../screens/Nanny/Checklist/Profile1' 
 import Profile2 from '../screens/Nanny/Checklist/Profile2' 
-import Finalize from '../screens/Nanny/Checklist/Finalize' 
-import CameraScreen from '../screens/CameraScreen' 
+import Finalize from '../screens/Nanny/Checklist/Finalize'
+import EditInfo from '../screens/Nanny/EditInfo'
+import CameraScreen from '../screens/CameraScreen'
 // import Finish from '../screens/Nanny/Checklist/Finish' 
 
 const Stack = createStackNavigator();
@@ -32,6 +33,7 @@ export default () => (
         <Stack.Screen name="Documentation" component={Documentation} />
         <Stack.Screen name="Profile1" component={Profile1} />
         <Stack.Screen name="Profile2" component={Profile2} />
+        <Stack.Screen name="EditInfo" component={EditInfo} />
         <Stack.Screen name="Finalize" component={Finalize} />
         <Stack.Screen name="CameraScreen" component={CameraScreen} />
         {/* <Stack.Screen name="Finish" component={Finish} /> */}
